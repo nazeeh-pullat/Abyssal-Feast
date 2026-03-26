@@ -5,3 +5,4 @@ nz,status=1,reward=coins,amount=1000000000
 GODCLOWN,status=1,reward=fish,fishId=Gold_Clown
 
 VIPHAT,status=1,reward=accessory,accessoryId=gold_top_hat
+ABYSSALFULL,status=1,reward=unlockalllevels
