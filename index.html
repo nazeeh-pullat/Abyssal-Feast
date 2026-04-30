@@ -1,94 +1,339 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abyssal Feast - Privacy Policy</title>
   <style>
+    :root {
+      --bg: #f5f5f7;
+      --card: rgba(255, 255, 255, 0.78);
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --border: rgba(0, 0, 0, 0.08);
+      --accent: #0071e3;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 0; /* important for full-width banner */
-      padding: 0;
-      line-height: 1.6;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(0, 113, 227, 0.12), transparent 32rem),
+        radial-gradient(circle at top right, rgba(90, 200, 250, 0.16), transparent 34rem),
+        var(--bg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    .content {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
+    .hero {
+      position: relative;
+      min-height: 52vh;
+      display: grid;
+      place-items: end center;
+      overflow: hidden;
+      padding: 120px 20px 48px;
+      isolation: isolate;
     }
 
-    h1, h2 {
-      color: #222;
-    }
-
-    /* Full-width banner */
     .banner {
-      width: 100vw;
-      height: 40vh;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      display: block;
+      z-index: -2;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.48)),
+        linear-gradient(to top, rgba(245, 245, 247, 0.95), rgba(245, 245, 247, 0) 48%);
+    }
+
+    .hero-card {
+      width: min(960px, 100%);
+      padding: clamp(28px, 5vw, 56px);
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      border-radius: 36px;
+      background: rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+      color: #fff;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.86;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 6.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+      font-weight: 800;
+    }
+
+    .updated {
+      margin: 22px 0 0;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: -18px auto 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro,
+    section {
+      background: var(--card);
+      backdrop-filter: blur(22px) saturate(180%);
+      -webkit-backdrop-filter: blur(22px) saturate(180%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+    }
+
+    .intro {
+      padding: clamp(24px, 4vw, 38px);
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .intro p {
+      margin: 0;
+      font-size: clamp(1.08rem, 2vw, 1.32rem);
+      color: #2c2c2e;
+    }
+
+    .policy-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    section {
+      padding: clamp(22px, 4vw, 34px);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.08);
+      border-color: rgba(0, 113, 227, 0.18);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      font-weight: 750;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: #3a3a3c;
+      font-size: 1.03rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    li {
+      position: relative;
+      padding: 12px 14px 12px 42px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.62);
+      color: #2c2c2e;
+      border: 1px solid rgba(0, 0, 0, 0.045);
+    }
+
+    li::before {
+      content: "✓";
+      position: absolute;
+      left: 14px;
+      top: 12px;
+      width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(0, 113, 227, 0.12);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(0, 113, 227, 0.1);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    footer {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        min-height: 46vh;
+        padding: 96px 16px 32px;
+      }
+
+      .hero-card {
+        border-radius: 28px;
+      }
+
+      main {
+        width: min(100% - 24px, 920px);
+        margin-bottom: 48px;
+      }
+
+      section:hover {
+        transform: none;
+      }
     }
   </style>
 </head>
 <body>
+  <header class="hero">
+    <img src="banner.png" alt="Abyssal Feast banner" class="banner" />
+    <div class="hero-card">
+      <p class="eyebrow">Abyssal Feast</p>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: April 2026</p>
+    </div>
+  </header>
 
-<img src="banner.png" alt="Banner" class="banner">
+  <main>
+    <div class="intro">
+      <p>This Privacy Policy describes how <strong>Abyssal Feast</strong> ("we", "our", or "us") handles information when you use our mobile game.</p>
+    </div>
 
-<div class="content">
-  <h1>Privacy Policy</h1>
-  <p>Last updated: April 2026</p>
+    <div class="policy-grid">
+      <section>
+        <h2>1. Information We Collect</h2>
+        <p>We do not collect personally identifiable information such as your name, email address, or phone number.</p>
+        <p>However, the game may collect limited non-personal data automatically, including:</p>
+        <ul>
+          <li>Device information, such as device type and OS version</li>
+          <li>Gameplay progress and in-game data, such as coins, unlocks, and progression</li>
+          <li>Anonymous usage data for improving the gameplay experience</li>
+        </ul>
+      </section>
 
-  <p>This Privacy Policy describes how <strong>Abyssal Feast</strong> ("we", "our", or "us") handles information when you use our mobile game.</p>
+      <section>
+        <h2>2. How We Use Information</h2>
+        <p>The information collected is used to:</p>
+        <ul>
+          <li>Save and load your game progress</li>
+          <li>Improve game performance and balance</li>
+          <li>Fix bugs and enhance the user experience</li>
+        </ul>
+      </section>
 
-  <h2>1. Information We Collect</h2>
-  <p>We do not collect personally identifiable information such as your name, email address, or phone number.</p>
+      <section>
+        <h2>3. Third-Party Services</h2>
+        <p>Abyssal Feast may use third-party services that may collect information used to identify you. These may include:</p>
+        <ul>
+          <li>Google Play Services</li>
+          <li>Analytics tools, if implemented</li>
+          <li>Advertising networks, if implemented</li>
+        </ul>
+        <p>These third-party services have their own privacy policies governing how they use such information.</p>
+      </section>
 
-  <p>However, the game may collect limited non-personal data automatically, including:</p>
-  <ul>
-    <li>Device information (device type, OS version)</li>
-    <li>Gameplay progress and in-game data (such as coins, unlocks, and progression)</li>
-    <li>Anonymous usage data for improving gameplay experience</li>
-  </ul>
+      <section>
+        <h2>4. Data Storage</h2>
+        <p>Game data such as progress, coins, and unlocks may be stored locally on your device using technologies such as PlayerPrefs.</p>
+        <p>Some features, such as redeem codes, may fetch data from external sources, such as GitHub-hosted files, but do not collect personal user data.</p>
+      </section>
 
-  <h2>2. How We Use Information</h2>
-  <p>The information collected is used to:</p>
-  <ul>
-    <li>Save and load your game progress</li>
-    <li>Improve game performance and balance</li>
-    <li>Fix bugs and enhance user experience</li>
-  </ul>
+      <section>
+        <h2>5. Children’s Privacy</h2>
+        <p>This game is intended for a general audience. We do not knowingly collect personal information from children under the age of 13.</p>
+      </section>
 
-  <h2>3. Third-Party Services</h2>
-  <p>Abyssal Feast may use third-party services that may collect information used to identify you. These may include:</p>
-  <ul>
-    <li>Google Play Services</li>
-    <li>Analytics tools (if implemented)</li>
-    <li>Advertising networks (if implemented)</li>
-  </ul>
+      <section>
+        <h2>6. Security</h2>
+        <p>We take reasonable steps to protect your data. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
+      </section>
 
-  <p>These third-party services have their own privacy policies governing how they use such information.</p>
+      <section>
+        <h2>7. Your Rights</h2>
+        <p>Since we do not collect personal data, there is no personal information to access, update, or delete. If you wish to reset your data, you can clear the app data through your device settings.</p>
+      </section>
 
-  <h2>4. Data Storage</h2>
-  <p>Game data such as progress, coins, and unlocks may be stored locally on your device using technologies such as PlayerPrefs.</p>
+      <section>
+        <h2>8. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page.</p>
+      </section>
 
-  <p>Some features, such as redeem codes, may fetch data from external sources (e.g., GitHub-hosted files) but do not collect personal user data.</p>
+      <section>
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions or concerns about this Privacy Policy, you can contact us at:</p>
+        <a class="contact-card" href="mailto:nazeehfazal12@gmail.com">nazeehfazal12@gmail.com</a>
+      </section>
+    </div>
+  </main>
 
-  <h2>5. Children's Privacy</h2>
-  <p>This game is intended for a general audience. We do not knowingly collect personal information from children under the age of 13.</p>
-
-  <h2>6. Security</h2>
-  <p>We take reasonable steps to protect your data. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
-
-  <h2>7. Your Rights</h2>
-  <p>Since we do not collect personal data, there is no personal information to access, update, or delete. If you wish to reset your data, you can clear the app data through your device settings.</p>
-
-  <h2>8. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. Changes will be posted on this page.</p>
-
-  <h2>9. Contact Us</h2>
-  <p>If you have any questions or concerns about this Privacy Policy, you can contact us at:</p>
-  <p><strong>Email:</strong> nazeehfazal12@gmail.com</p>
-</div>
-
+  <footer>
+    © 2026 Abyssal Feast. All rights reserved.
+  </footer>
 </body>
 </html>
