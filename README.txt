@@ -1,5 +1,5 @@
-WELCOME100,status=1,reward=coins,amount=10000
-FATHIMAFISHERIES,status=1,reward=coins,amount=10000000
+WELCOME100,status=1,reward=shells,amount=10000
+FATHIMAFISHERIES,status=1,reward=shells,amount=10000000
 nz,status=1,reward=coins,amount=1000000000
 
 GODCLOWN,status=1,reward=fish,fishId=Gold_Clown
