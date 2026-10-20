@@ -188,7 +188,7 @@ h2.title { font-size: clamp(2.1rem, 5vw, 3.7rem); background: linear-gradient(18
 .showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 46px; }
 .stage { position: relative; min-height: 440px; padding: 24px; display: grid; place-items: center; overflow: hidden;
   background: radial-gradient(70% 55% at 50% 40%, rgba(94, 234, 212, .35), transparent 70%), linear-gradient(180deg, rgba(8, 60, 90, .6), rgba(2, 16, 31, .85)), url("../img/bg/bg02.webp") center / cover; }
-.stage .fishbox { width: min(420px, 90%); filter: drop-shadow(0 30px 30px rgba(0, 0, 0, .35)); animation: bob 4.2s ease-in-out infinite; }
+.stage .fishbox { width: min(210px, 45%); filter: drop-shadow(0 30px 30px rgba(0, 0, 0, .35)); animation: bob 4.2s ease-in-out infinite; }
 @keyframes bob { 0%, 100% { transform: translateY(-8px); } 50% { transform: translateY(10px); } }
 .stage .shadow { position: absolute; bottom: 38px; left: 50%; width: 52%; height: 22px; margin-left: -26%; border-radius: 50%; background: radial-gradient(closest-side, rgba(0, 0, 0, .45), transparent); animation: shadow 4.2s ease-in-out infinite; }
 @keyframes shadow { 0%, 100% { transform: scaleX(.92); opacity: .7; } 50% { transform: scaleX(1.05); opacity: 1; } }

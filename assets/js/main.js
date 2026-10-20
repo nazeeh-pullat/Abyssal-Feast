@@ -7,6 +7,7 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches && !/[?&]motion=1/.test(location.search);
   const IMG = "assets/img/";
+  const bgOf = (l) => IMG + (l.type === "maze" ? "bg/maze" : "bg/bg" + String(l.bg).padStart(2, "0")) + ".webp";
   const src = (p) => IMG + (p.includes("/") ? p : "fish/" + p) + ".webp";
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const lerp = (a, b, t) => a + (b - a) * t;
@@ -206,7 +207,7 @@
     const groups = [["all", "All 31"], ["eat", "Eat & grow"], ["pool", "Feeding pools"], ["timed", "Timed trials"], ["hunt", "Hunts"], ["survival", "Survival"], ["boss", "Bosses"], ["maze", "Maze"]];
     $("#filters").innerHTML = groups.map(([k, n]) => `<button class="filter" type="button" data-f="${k}" aria-pressed="${k === "all"}">${n}</button>`).join("");
     $("#levels").innerHTML = L.map((l) => `<button class="lcard ${l.type === "boss" ? "isboss" : ""} rv" type="button" data-lv="${l.n}" data-t="${l.type}" style="--tc:${TYPE[l.type].color}">
-      <div class="thumb"><img src="${IMG}bg/bg${String(l.bg).padStart(2, "0")}.webp" alt="" loading="lazy" width="480" height="270">${l.boss && D.bosses.find((b) => b.id === l.boss) ? `<img class="bossthumb" src="${src(D.bosses.find((b) => b.id === l.boss).img)}" alt="" loading="lazy">` : ""}<span class="no">${l.n}</span><span class="chip tag" style="background:rgba(2,16,31,.7)">${TYPE[l.type].label}</span></div>
+      <div class="thumb"><img src="${bgOf(l)}" alt="" loading="lazy" width="480" height="270">${l.boss && D.bosses.find((b) => b.id === l.boss) ? `<img class="bossthumb" src="${src(D.bosses.find((b) => b.id === l.boss).img)}" alt="" loading="lazy">` : ""}<span class="no">${l.n}</span><span class="chip tag" style="background:rgba(2,16,31,.7)">${TYPE[l.type].label}</span></div>
       <div class="body"><h3>${esc(l.name)}</h3><p>${esc(l.blurb)}</p></div></button>`).join("");
     $("#filters").addEventListener("click", (e) => {
       const b = e.target.closest(".filter"); if (!b) return; curFilter = b.dataset.f;
@@ -224,7 +225,7 @@
     n = clamp(n, 1, D.levels.length); curLevel = n;
     const l = D.levels[n - 1], tc = TYPE[l.type], boss = l.boss && D.bosses.find((b) => b.id === l.boss);
     mdl.innerHTML = `<button class="xbtn" type="button" aria-label="Close" id="mx">${ic("x")}</button>
-      <div class="art" style="background-image:url(${IMG}bg/bg${String(l.bg).padStart(2, "0")}.webp)"><span class="big">${n}</span>${boss ? `<img class="bossimg" src="${src(boss.img)}" alt="">` : ""}</div>
+      <div class="art" style="background-image:url(${bgOf(l)})"><span class="big">${n}</span>${boss ? `<img class="bossimg" src="${src(boss.img)}" alt="">` : ""}</div>
       <div class="txt"><div><span class="chip" style="background:${tc.color};color:#021;border-color:transparent">${tc.label}</span> <span class="chip">Chapter 1 · The Shallows</span></div>
         <h3 id="mtitle">${esc(l.name)}</h3><p style="margin:0">${esc(l.blurb)}</p>
         ${l.new.length ? `<div><b style="color:var(--sun)">New in this level</b><ul style="margin-top:8px">${l.new.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}

@@ -36,7 +36,7 @@ PLAYER = [
     dict(id="clownfish", name="Clownfish", img="clownfish", sheet=dict(src="clownfish", cols=7, rows=3, frames=21, ratio=0.676, fps=22),
          ability="Suck", abilityText="Pulls in whatever is in front of you, like a living vacuum. Immune to sea anemones.",
          hearts=1, speed=6, how="Starter fish", fact=fact("Clown Fish"), level=1),
-    dict(id="dartfish", name="Dartfish", img="dartfish", ability="Dash", abilityText="A quick burst of speed in the direction you face. Perfect for escaping or catching a fleeing meal.",
+    dict(id="dartfish", name="Dartfish", img="dartfish", sheet=dict(src="dartfish", cols=3, rows=2, frames=6, ratio=0.539, fps=9), ability="Dash", abilityText="A quick burst of speed in the direction you face. Perfect for escaping or catching a fleeing meal.",
          hearts=2, speed=8, how="Shop - 6,500 shells", fact=fact("Dart Fish"), level=4),
     dict(id="pufferfish", name="Pufferfish", img="pufferfish", sheet=dict(src="pufferfish", cols=8, rows=4, frames=32, ratio=1, fps=22),
          ability="Puffer Shield", abilityText="Inflate into a spiky ball: invincible for a moment, and everything you touch is bounced away.",
@@ -220,8 +220,8 @@ CHAPTERS = [
 STREAK = ["FEAST", "FEAST RUSH", "FEAST SURGE", "FEASTSTORM", "GRAND FEAST", "SAVAGE FEAST", "ABYSSAL FEAST"]
 
 FAQ = [
-    ("When can I play?", "Chapter 1 is playable in testing now. A Google Play release is planned - follow along here for news. Chapters 2 to 5 are in development."),
-    ("Which devices does it run on?", "Android first, built in Unity for phones and tablets in landscape. It is also tested on PC."),
+    ("When can I play?", "Chapter 1 is playable in testing now. A Google Play release is planned, with iOS, Steam and a browser version to follow - follow along here for news. Chapters 2 to 5 are in development."),
+    ("Which devices does it run on?", "Android first, built in Unity for phones and tablets in landscape. iOS, Steam (PC) and a browser version are coming soon."),
     ("Does it need an internet connection?", "No. The game plays fully offline. The only feature that goes online is entering a redeem code, which is checked on our server."),
     ("Are there ads or in-app purchases?", "Not in the current build. If that ever changes we will say so here and update the Privacy Policy before the update ships."),
     ("Is there multiplayer?", "Local PVP: two players on one device (Split Screen Duel, Score Race or Last Fish Standing). There is no online play and no account."),

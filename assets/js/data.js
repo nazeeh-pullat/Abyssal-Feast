@@ -63,6 +63,14 @@ window.AF_DATA = {
    "id": "dartfish",
    "name": "Dartfish",
    "img": "dartfish",
+   "sheet": {
+    "src": "dartfish",
+    "cols": 3,
+    "rows": 2,
+    "frames": 6,
+    "ratio": 0.539,
+    "fps": 9
+   },
    "ability": "Dash",
    "abilityText": "A quick burst of speed in the direction you face. Perfect for escaping or catching a fleeing meal.",
    "hearts": 2,
@@ -950,11 +958,11 @@ window.AF_DATA = {
  "faq": [
   [
    "When can I play?",
-   "Chapter 1 is playable in testing now. A Google Play release is planned - follow along here for news. Chapters 2 to 5 are in development."
+   "Chapter 1 is playable in testing now. A Google Play release is planned, with iOS, Steam and a browser version to follow - follow along here for news. Chapters 2 to 5 are in development."
   ],
   [
    "Which devices does it run on?",
-   "Android first, built in Unity for phones and tablets in landscape. It is also tested on PC."
+   "Android first, built in Unity for phones and tablets in landscape. iOS, Steam (PC) and a browser version are coming soon."
   ],
   [
    "Does it need an internet connection?",
