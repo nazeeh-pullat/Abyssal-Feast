@@ -102,6 +102,7 @@
     const names = ["hat_wizard_hat", "hat_birthday_crown", "hat_buccaneer_cap", "hat_halo_with_wings", "hat_crystal_shard_crown", "hat_graduation_cap", "hat_pizza_slice_hat", "hat_hot_dog_hat", "hat_lily_pad_hat", "hat_teacup_hat", "hat_birdhouse_hat",
       "hat_mini_windmill_hat", "hat_gold_top_hat", "hat_gold_laurel_crown", "face_gear_eye_visor", "face_donut_eye_frame", "face_lightning_eye_lens", "face_camera_lens_eye", "face_magnifier_loupe", "neck_jellyfish_charm", "neck_trophy_charm", "neck_sun_medallion",
       "neck_treasure_map_pendant", "neck_lucky_horseshoe_charm", "neck_shell_brooch", "neck_lantern_charm", "neck_jingle_bell", "neck_lighthouse_pendant"];
+    window.AF_ACC = names;
     const pretty = (n) => n.replace(/^(hat|face|neck)_/, "").replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const make = (list) => { const h = list.map((n) => `<div class="acc" title="${pretty(n)}"><img src="${IMG}acc/${n}.webp" alt="${pretty(n)}" loading="lazy"></div>`).join(""); return h + h; };
     const half = Math.ceil(names.length / 2);
@@ -385,9 +386,10 @@
       for (let i = 0; i < 5; i++) { const el = document.createElement("i"); el.className = "click-bubble"; const a = -Math.PI / 2 + (Math.random() - 0.5) * 2.2, dist = 30 + Math.random() * 50; el.style.cssText = `left:${e.clientX}px;top:${e.clientY}px;--x:${Math.cos(a) * dist}px;--y:${Math.sin(a) * dist}px;width:${6 + Math.random() * 10}px;height:${6 + Math.random() * 10}px`; document.body.appendChild(el); setTimeout(() => el.remove(), 1000); }
     });
   }
+  window.AF_UI = { sprite, hydrate: hydrateSprites };
   /* ---------------------------------------------------------------- boot */
   $$("[data-ic]").forEach((el) => el.insertAdjacentHTML("afterbegin", ic(el.dataset.ic)));
-  renderStats(); renderSteps(); renderFeatures(); renderModes(); renderRooms(); renderAccessories(); renderFaq(); renderChapters(); renderCTA();
+  renderStats(); renderSteps(); renderFeatures(); renderModes(); renderAccessories(); renderFaq(); renderChapters(); renderCTA();
   renderFish(); renderLadder(); renderWildlife(); renderBosses(); renderLevels(); renderGallery(); streakDemo(); nav(); scrollFX();
   swimmers(); particles(); hydrateSprites(); reveal(); tilt();
   requestAnimationFrame(tick);

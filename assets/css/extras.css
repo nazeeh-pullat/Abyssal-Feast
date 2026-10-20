@@ -208,3 +208,8 @@ img, svg { max-width: 100%; }
   .nav ul a::after { left: 1em; right: auto; width: 24px; }
   .burger { display: block; }
 }
+
+/* accessories: always fit inside the tile, whatever the aspect ratio (tall necklaces, wide hats) */
+.acc { --pad: 14px; position: relative; display: block; }
+.acc img { position: absolute; inset: var(--pad); width: calc(100% - var(--pad) * 2); height: calc(100% - var(--pad) * 2); max-width: none; max-height: none; object-fit: contain; object-position: center; }
+@media (max-width: 620px) { .acc { --pad: 11px; } }

@@ -38,6 +38,8 @@
     shield: S('<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>'),
     warn: S('<path d="M12 3.5l10 17.5H2z"/><path d="M12 10v5M12 18h.01"/>'),
     puffer: S('<circle cx="11" cy="12" r="6.5"/><path d="M11 2.5v2.5M11 19v2.5M1.5 12H4M18 12h1.5M4.3 5.3l1.8 1.8M15.9 16.9l1.8 1.8M4.3 18.7l1.8-1.8M15.9 7.1l1.8-1.8M17.5 12l4.5-3.5v7z"/><circle cx="8.6" cy="10.6" r=".9" fill="currentColor" stroke="none"/>'),
+    plus: S('<path d="M12 5v14M5 12h14"/>'),
+    minus: S('<path d="M5 12h14"/>'),
     dot: S('<circle cx="12" cy="12" r="5" fill="currentColor"/>'),
     crown: S('<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/>'),
   };

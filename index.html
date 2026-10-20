@@ -17,6 +17,7 @@
   <link rel="preload" href="assets/img/hero-bg.webp" as="image">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/extras.css">
+  <link rel="stylesheet" href="assets/css/lab.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"VideoGame","name":"Abyssal Feast","description":"A colourful underwater survival game where you start as a tiny clownfish and eat your way up the food chain.","genre":["Arcade","Action","Survival"],"gamePlatform":["Android","iOS","Steam","Web browser"],"applicationCategory":"Game","publisher":{"@type":"Organization","name":"NP Games"},"author":{"@type":"Person","name":"Nazeeh Pullat"},"image":"assets/img/og.jpg","inLanguage":"en"}
   </script>
@@ -218,13 +219,48 @@
         <div class="marquee rv" id="m1"><div class="tracks" id="t1"></div></div>
         <div class="marquee rev rv" id="m2" style="--dur:56s"><div class="tracks" id="t2"></div></div>
 
-        <div class="split" style="margin-top:56px">
-          <div class="rv">
-            <h3 style="font-size:2rem">My Aquarium</h3>
-            <p class="lead" style="font-size:1.1rem">A living tank for the fish you collect. Drop in coral, rocks and seaweed, move them around, pick a room around the glass and tidy up with the sponge and net. Tap any fish to zoom in on it.</p>
-            <p>Unlocks after Level 4 - together with the Shop.</p>
+        <div class="lab" id="closet-wrap">
+          <div class="center rv" style="margin-top:64px">
+            <h3 class="labtitle">Try the Inventory</h3>
+            <p class="lead" style="font-size:1.1rem">Pick a fish, pick an accessory, then nudge it into place with the move, size and rotate buttons - exactly how the in-game Inventory works. Hold a button to keep moving.</p>
           </div>
-          <div class="rooms rv" id="rooms"></div>
+          <div class="closet glass rv" id="closet">
+            <div class="cstage" id="cstage" aria-live="polite"></div>
+            <div class="cpanel">
+              <div class="cpick" id="cfish" aria-label="Choose a fish"></div>
+              <div class="tabs" id="ctabs" role="tablist" aria-label="Accessory type"></div>
+              <div class="cgrid" id="cgrid"></div>
+              <div class="cwear">Wearing: <b id="cworn"></b></div>
+              <div class="cpad" id="cpad" aria-label="Move, resize and rotate the selected accessory"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lab" id="aq-wrap">
+          <div class="center rv" style="margin-top:80px">
+            <h3 class="labtitle">Build your own tank</h3>
+            <p class="lead" style="font-size:1.1rem">My Aquarium is a living tank for the fish you collect. Drop in decor, drag it around, change the substrate and pick a room around the glass. Double-click an item to remove it. Unlocks after Level 4, together with the Shop.</p>
+          </div>
+          <div class="aqdemo rv">
+            <div class="aqroom" id="aqroom">
+              <div class="aqwain"></div><div class="aqfloor"></div>
+              <div class="aqtank" id="aqtank">
+                <div class="aqlight"></div>
+                <div class="aqswim" id="aqswim"></div>
+                <div class="aqsub" id="aqsub"></div>
+                <div class="aqitems" id="aqitems"></div>
+                <div class="aqglass"></div>
+              </div>
+              <div class="aqstand"></div>
+            </div>
+            <div class="aqpanel">
+              <h4>Room</h4><div class="aqrooms" id="aqrooms"></div>
+              <h4>Substrate</h4><div class="chiprow" id="aqsubs"></div>
+              <h4>Decor and equipment</h4><div class="chiprow" id="aqadd"></div>
+              <h4>Add a fish</h4><div class="cpick" id="aqfish"></div>
+              <button type="button" class="btn ghost" id="aqclear" style="margin-top:14px;padding:.6em 1.2em;font-size:.9rem">Empty the tank</button>
+            </div>
+          </div>
         </div>
 
         <div class="center rv" style="margin-top:80px">
@@ -306,5 +342,6 @@
   <script src="assets/js/icons.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/lab.js"></script>
 </body>
 </html>
