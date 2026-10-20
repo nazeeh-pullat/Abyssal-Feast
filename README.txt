@@ -6,3 +6,4 @@ PEARLS500,status=1,reward=blackpearls,amount=500
 PEARLS5000,status=1,reward=blackpearls,amount=5000
 ABYSSALPEARLS,status=1,reward=blackpearls,amount=100000
 EVERYTHING,status=1,reward=unlockeverything
+GOLDENFEAST,status=1,reward=fish,fishId=gold_clown
