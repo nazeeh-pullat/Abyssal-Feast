@@ -116,7 +116,7 @@
     $("#chapter-list").innerHTML = D.chapters.map((c) => {
       const cls = c.status === "live" ? "live" : c.classified ? "soon classified" : "soon";
       const chip = c.status === "live" ? `<span class="chip live"><i class="pulse"></i>Playable now</span>` : `<span class="chip soon">Coming soon</span>`;
-      return `<article class="ch ${cls} rv"><div class="cbg" style="background-image:url(${IMG}${c.map}.webp)"></div>${c.status === "live" ? "" : `<div class="lock" aria-hidden="true">${ic(c.classified ? "lock" : "leaf")}</div>`}
+      return `<article class="ch ${cls} rv"><div class="cbg" style="background-image:url(${IMG}${c.map}.webp)"></div>${c.status === "live" ? "" : `<div class="lock" aria-hidden="true">${ic(c.n === 2 ? "leaf" : "lock")}</div>`}
         <div class="num">${c.n}</div><h3>${c.classified ? "Chapter " + c.n + " · ???" : esc(c.name)}</h3><p>${esc(c.text)}</p>${chip}
         ${c.status === "live" ? `<a class="btn go" href="#chapter1" style="padding:.6em 1.2em;font-size:.88rem">Explore</a>` : ""}</article>`;
     }).join("");

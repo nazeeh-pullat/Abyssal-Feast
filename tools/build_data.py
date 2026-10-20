@@ -212,9 +212,9 @@ CHAPTERS = [
          badges=["31 levels", "2 boss fights", "Playable now (in testing)"]),
     dict(n=2, name="The Kelp Forest", status="soon", map="map-ch2", text="Giant kelp can grow up to half a metre a day, making towering underwater forests full of hiding places. Bigger fish, new dangers and creeping moss are on the way.",
          badges=["Coming soon"]),
-    dict(n=3, name="Chapter 3", status="soon", map="map-ch3", text="Somewhere past the reef the water turns deep blue. New creatures. New rules. Details soon.", badges=["Coming soon"], classified=True),
-    dict(n=4, name="Chapter 4", status="soon", map="map-ch4", text="Something glows in the dark below. Whatever lives down here does not like visitors.", badges=["Coming soon"], classified=True),
-    dict(n=5, name="Chapter 5", status="soon", map="map-ch5", text="The deepest water of all - where the abyss waits. Are you big enough?", badges=["Coming soon"], classified=True),
+    dict(n=3, name="The Open Ocean", status="soon", map="map-ch3", text="Leave the reef behind. Out in the open ocean there is nowhere to hide - vast blue water, fast hunters and fish bigger than anything you have met.", badges=["Coming soon"]),
+    dict(n=4, name="The Volcanic Mountain", status="soon", map="map-ch4", text="Beneath a smouldering undersea mountain the water runs hot. Vents, lava glow and fiery creatures turn every swim into a gamble.", badges=["Coming soon"]),
+    dict(n=5, name="The Abyssal Depths", status="soon", map="map-ch5", text="The deepest water of all, where sunlight never reaches and the biggest predators wait. Are you big enough to rule the abyss?", badges=["Coming soon"]),
 ]
 
 STREAK = ["FEAST", "FEAST RUSH", "FEAST SURGE", "FEASTSTORM", "GRAND FEAST", "SAVAGE FEAST", "ABYSSAL FEAST"]

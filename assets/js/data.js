@@ -914,36 +914,33 @@ window.AF_DATA = {
   },
   {
    "n": 3,
-   "name": "Chapter 3",
+   "name": "The Open Ocean",
    "status": "soon",
    "map": "map-ch3",
-   "text": "Somewhere past the reef the water turns deep blue. New creatures. New rules. Details soon.",
+   "text": "Leave the reef behind. Out in the open ocean there is nowhere to hide - vast blue water, fast hunters and fish bigger than anything you have met.",
    "badges": [
     "Coming soon"
-   ],
-   "classified": true
+   ]
   },
   {
    "n": 4,
-   "name": "Chapter 4",
+   "name": "The Volcanic Mountain",
    "status": "soon",
    "map": "map-ch4",
-   "text": "Something glows in the dark below. Whatever lives down here does not like visitors.",
+   "text": "Beneath a smouldering undersea mountain the water runs hot. Vents, lava glow and fiery creatures turn every swim into a gamble.",
    "badges": [
     "Coming soon"
-   ],
-   "classified": true
+   ]
   },
   {
    "n": 5,
-   "name": "Chapter 5",
+   "name": "The Abyssal Depths",
    "status": "soon",
    "map": "map-ch5",
-   "text": "The deepest water of all - where the abyss waits. Are you big enough?",
+   "text": "The deepest water of all, where sunlight never reaches and the biggest predators wait. Are you big enough to rule the abyss?",
    "badges": [
     "Coming soon"
-   ],
-   "classified": true
+   ]
   }
  ],
  "streak": [
