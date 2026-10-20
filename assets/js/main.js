@@ -130,6 +130,9 @@
     if (L.youtube) out.push(`<a class="btn ghost" href="${esc(L.youtube)}" target="_blank" rel="noopener">${ic("play")} YouTube</a>`);
     out.push(`<a class="btn ghost" href="mailto:nazeehfazal12@gmail.com">${ic("mail")} Say hello</a>`);
     $("#cta-links").innerHTML = out.join("");
+    // the hero's main button goes straight to the store page once there is one, otherwise down to the download section
+    const dl = $("#hero-dl");
+    if (dl && L.googlePlay) { dl.href = L.googlePlay; dl.target = "_blank"; dl.rel = "noopener"; }
     const f = [L.discord && ["Discord", L.discord], L.youtube && ["YouTube", L.youtube], L.tiktok && ["TikTok", L.tiktok], L.instagram && ["Instagram", L.instagram]].filter(Boolean);
     $("#f-links").innerHTML = f.map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${n}</a>`).join(" · ");
   }
@@ -375,6 +378,12 @@
   function nav() {
     const b = $("#burger"), m = $("#menu");
     b.addEventListener("click", () => { const o = m.classList.toggle("open"); b.setAttribute("aria-expanded", o); });
+    m.querySelectorAll(".sub-toggle").forEach((t) => t.addEventListener("click", () => {
+      const li = t.parentElement, o = !li.classList.contains("open");
+      m.querySelectorAll(".has-sub.open").forEach((x) => { x.classList.remove("open"); x.firstElementChild.setAttribute("aria-expanded", "false"); });
+      li.classList.toggle("open", o); t.setAttribute("aria-expanded", o);
+    }));
+    document.addEventListener("click", (e) => { if (!e.target.closest(".has-sub")) m.querySelectorAll(".has-sub.open").forEach((x) => { x.classList.remove("open"); x.firstElementChild.setAttribute("aria-expanded", "false"); }); });
     m.addEventListener("click", (e) => { if (e.target.closest("a")) { m.classList.remove("open"); b.setAttribute("aria-expanded", "false"); } });
   }
 

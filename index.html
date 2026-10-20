@@ -15,9 +15,9 @@
   <link rel="apple-touch-icon" href="assets/img/icon-192.png">
   <link rel="preload" href="assets/fonts/lilita-one-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/img/hero-bg.webp" as="image">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261024">
-  <link rel="stylesheet" href="assets/css/extras.css?v=20261024">
-  <link rel="stylesheet" href="assets/css/lab.css?v=20261024">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261025">
+  <link rel="stylesheet" href="assets/css/extras.css?v=20261025">
+  <link rel="stylesheet" href="assets/css/lab.css?v=20261025">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"VideoGame","name":"Abyssal Feast","description":"A colourful underwater survival game where you start as a tiny clownfish and eat your way up the food chain.","genre":["Arcade","Action","Survival"],"gamePlatform":["Android","iOS","Steam","Web browser"],"applicationCategory":"Game","publisher":{"@type":"Organization","name":"NP Games"},"author":{"@type":"Person","name":"Nazeeh Pullat"},"image":"assets/img/og.jpg","inLanguage":"en"}
   </script>
@@ -36,14 +36,25 @@
       <ul id="menu">
         <li><a href="#about">The Game</a></li>
         <li><a href="#fish">Fish</a></li>
-        <li><a href="#chapter1">Chapter 1</a></li>
-        <li><a href="#wildlife">Wildlife</a></li>
-        <li><a href="#bosses">Bosses</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false" aria-haspopup="true">Chapters</button>
+          <ul class="sub">
+            <li><a href="#chapter1">Chapter 1</a></li>
+            <li><a href="#wildlife">Wildlife</a></li>
+            <li><a href="#bosses">Bosses</a></li>
+            <li><a href="#chapters">What's Next</a></li>
+          </ul>
+        </li>
         <li><a href="#collect">Collect</a></li>
-        <li><a href="#chapters">What's Next</a></li>
         <li><a href="#donate">Donate</a></li>
-        <li><a href="codes/">Codes &amp; Gifts</a></li>
-        <li><a href="privacy/">Privacy</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false" aria-haspopup="true">More</button>
+          <ul class="sub">
+            <li><a href="codes/">Codes &amp; Gifts</a></li>
+            <li><a href="privacy/">Privacy Policy</a></li>
+            <li><a href="terms/">Terms of Use</a></li>
+          </ul>
+        </li>
       </ul>
       <div class="cta">
         <a class="btn" href="#get" id="navcta">Get the game</a>
@@ -62,7 +73,7 @@
         <h1>Eat. Grow. <em>Rule the reef.</em></h1>
         <p class="lead">Start as a tiny clownfish in an ocean where everything is someone's lunch. Chomp smaller fish, outswim bigger ones, beat bosses and feast your way to the top of the food chain.</p>
         <div class="hero-actions">
-          <a class="btn" href="#chapter1">Dive into Chapter 1</a>
+          <a class="btn" href="#get" id="hero-dl">Download the game</a>
           <a class="btn ghost" href="#fish">Meet the fish</a>
         </div>
         <div class="pills">
@@ -354,10 +365,10 @@
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer"><img id="lbimg" alt=""><p id="lbcap"></p></div>
 
   <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
-  <script src="assets/js/config.js?v=20261024"></script>
-  <script src="assets/js/icons.js?v=20261024"></script>
-  <script src="assets/js/data.js?v=20261024"></script>
-  <script src="assets/js/main.js?v=20261024"></script>
-  <script src="assets/js/lab.js?v=20261024"></script>
+  <script src="assets/js/config.js?v=20261025"></script>
+  <script src="assets/js/icons.js?v=20261025"></script>
+  <script src="assets/js/data.js?v=20261025"></script>
+  <script src="assets/js/main.js?v=20261025"></script>
+  <script src="assets/js/lab.js?v=20261025"></script>
 </body>
 </html>
