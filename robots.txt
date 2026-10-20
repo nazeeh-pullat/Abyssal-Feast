@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nazeeh-pullat.github.io/Abyssal-Feast/sitemap.xml

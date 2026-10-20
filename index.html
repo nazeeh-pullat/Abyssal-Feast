@@ -1,339 +1,308 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abyssal Feast - Privacy Policy</title>
-  <style>
-    :root {
-      --bg: #f5f5f7;
-      --card: rgba(255, 255, 255, 0.78);
-      --text: #1d1d1f;
-      --muted: #6e6e73;
-      --border: rgba(0, 0, 0, 0.08);
-      --accent: #0071e3;
-      --shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
-      --radius: 28px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.65;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(0, 113, 227, 0.12), transparent 32rem),
-        radial-gradient(circle at top right, rgba(90, 200, 250, 0.16), transparent 34rem),
-        var(--bg);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 52vh;
-      display: grid;
-      place-items: end center;
-      overflow: hidden;
-      padding: 120px 20px 48px;
-      isolation: isolate;
-    }
-
-    .banner {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-      transform: scale(1.02);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.48)),
-        linear-gradient(to top, rgba(245, 245, 247, 0.95), rgba(245, 245, 247, 0) 48%);
-    }
-
-    .hero-card {
-      width: min(960px, 100%);
-      padding: clamp(28px, 5vw, 56px);
-      border: 1px solid rgba(255, 255, 255, 0.36);
-      border-radius: 36px;
-      background: rgba(255, 255, 255, 0.28);
-      backdrop-filter: blur(24px) saturate(160%);
-      -webkit-backdrop-filter: blur(24px) saturate(160%);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
-      color: #fff;
-      text-align: center;
-    }
-
-    .eyebrow {
-      margin: 0 0 10px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.86;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(3rem, 8vw, 6.8rem);
-      line-height: 0.95;
-      letter-spacing: -0.07em;
-      font-weight: 800;
-    }
-
-    .updated {
-      margin: 22px 0 0;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: rgba(255, 255, 255, 0.86);
-    }
-
-    main {
-      width: min(920px, calc(100% - 32px));
-      margin: -18px auto 80px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .intro,
-    section {
-      background: var(--card);
-      backdrop-filter: blur(22px) saturate(180%);
-      -webkit-backdrop-filter: blur(22px) saturate(180%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
-    }
-
-    .intro {
-      padding: clamp(24px, 4vw, 38px);
-      margin-bottom: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .intro p {
-      margin: 0;
-      font-size: clamp(1.08rem, 2vw, 1.32rem);
-      color: #2c2c2e;
-    }
-
-    .policy-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    section {
-      padding: clamp(22px, 4vw, 34px);
-      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-    }
-
-    section:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.08);
-      border-color: rgba(0, 113, 227, 0.18);
-    }
-
-    h2 {
-      margin: 0 0 12px;
-      font-size: clamp(1.35rem, 3vw, 2rem);
-      line-height: 1.15;
-      letter-spacing: -0.035em;
-      font-weight: 750;
-    }
-
-    p {
-      margin: 0 0 14px;
-      color: #3a3a3c;
-      font-size: 1.03rem;
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    ul {
-      margin: 16px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-
-    li {
-      position: relative;
-      padding: 12px 14px 12px 42px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.62);
-      color: #2c2c2e;
-      border: 1px solid rgba(0, 0, 0, 0.045);
-    }
-
-    li::before {
-      content: "✓";
-      position: absolute;
-      left: 14px;
-      top: 12px;
-      width: 20px;
-      height: 20px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: rgba(0, 113, 227, 0.12);
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 650;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-card {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 6px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: rgba(0, 113, 227, 0.1);
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    footer {
-      width: min(920px, calc(100% - 32px));
-      margin: 0 auto 40px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 640px) {
-      .hero {
-        min-height: 46vh;
-        padding: 96px 16px 32px;
-      }
-
-      .hero-card {
-        border-radius: 28px;
-      }
-
-      main {
-        width: min(100% - 24px, 920px);
-        margin-bottom: 48px;
-      }
-
-      section:hover {
-        transform: none;
-      }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Abyssal Feast - Eat. Grow. Rule the reef. | Underwater survival game</title>
+  <meta name="description" content="Abyssal Feast is a colourful underwater survival game: start as a tiny clownfish, eat your way up the food chain, dodge predators, battle bosses and explore the Shallows. 31 levels, 5 playable fish, 570+ accessories. By NP Games.">
+  <meta name="theme-color" content="#06344f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abyssal Feast - Eat. Grow. Rule the reef.">
+  <meta property="og:description" content="Start as a tiny clownfish and feast your way up the food chain. 31 levels, boss fights, 5 playable fish and a living ocean.">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-192.png">
+  <link rel="preload" href="assets/fonts/lilita-one-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/img/hero-bg.webp" as="image">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoGame","name":"Abyssal Feast","description":"A colourful underwater survival game where you start as a tiny clownfish and eat your way up the food chain.","genre":["Arcade","Action","Survival"],"gamePlatform":"Android","applicationCategory":"Game","publisher":{"@type":"Organization","name":"NP Games"},"author":{"@type":"Person","name":"Nazeeh Pullat"},"image":"assets/img/og.jpg","inLanguage":"en"}
+  </script>
 </head>
 <body>
-  <header class="hero">
-    <img src="banner.png" alt="Abyssal Feast banner" class="banner" />
-    <div class="hero-card">
-      <p class="eyebrow">Abyssal Feast</p>
-      <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: April 2026</p>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="rays" aria-hidden="true"></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div id="glow" aria-hidden="true"></div>
+
+  <aside class="depth" aria-hidden="true"><div class="zone" id="zone">Surface</div><div class="track"><div class="fill" id="depthfill"></div><div class="dot" id="depthdot"></div></div><div class="num" id="depthnum">0 m</div></aside>
+
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Abyssal Feast - home"><img src="assets/img/logo.png" alt="Abyssal Feast" width="140" height="62"></a>
+      <ul id="menu">
+        <li><a href="#about">The Game</a></li>
+        <li><a href="#fish">Fish</a></li>
+        <li><a href="#chapter1">Chapter 1</a></li>
+        <li><a href="#wildlife">Wildlife</a></li>
+        <li><a href="#bosses">Bosses</a></li>
+        <li><a href="#collect">Collect</a></li>
+        <li><a href="#chapters">What's Next</a></li>
+      </ul>
+      <div class="cta">
+        <a class="btn" href="#get" id="navcta">Get the game</a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <div class="intro">
-      <p>This Privacy Policy describes how <strong>Abyssal Feast</strong> ("we", "our", or "us") handles information when you use our mobile game.</p>
-    </div>
+  <main id="main">
+    <!-- ======================= HERO ======================= -->
+    <section class="hero" id="top">
+      <div class="hero-bg" id="herobg"></div>
+      <div class="swimmers" id="swimmers" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <img class="hero-logo" src="assets/img/logo.webp" alt="Abyssal Feast" width="760" height="333" fetchpriority="high">
+        <h1>Eat. Grow. <em>Rule the reef.</em></h1>
+        <p class="lead">Start as a tiny clownfish in an ocean where everything is someone's lunch. Chomp smaller fish, outswim bigger ones, beat bosses and feast your way to the top of the food chain.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#chapter1">Dive into Chapter 1</a>
+          <a class="btn ghost" href="#fish">Meet the fish</a>
+        </div>
+        <div class="pills">
+          <span class="chip">📱 Android</span><span class="chip">📴 Plays offline</span><span class="chip">🚫 No ads</span><span class="chip">🔒 No accounts</span>
+        </div>
+      </div>
+      <div class="scrollcue" aria-hidden="true"></div>
+    </section>
 
-    <div class="policy-grid">
-      <section>
-        <h2>1. Information We Collect</h2>
-        <p>We do not collect personally identifiable information such as your name, email address, or phone number.</p>
-        <p>However, the game may collect limited non-personal data automatically, including:</p>
-        <ul>
-          <li>Device information, such as device type and OS version</li>
-          <li>Gameplay progress and in-game data, such as coins, unlocks, and progression</li>
-          <li>Anonymous usage data for improving the gameplay experience</li>
-        </ul>
-      </section>
+    <!-- ======================= ABOUT ======================= -->
+    <section id="about">
+      <div class="wrap split">
+        <div class="rv">
+          <div class="eyebrow"><span class="depthtag">0 m</span> The game</div>
+          <h2 class="title">A reef that fights back</h2>
+          <p class="lead">Abyssal Feast is a fast, colourful underwater survival game. Swim with one thumb, eat anything smaller than you, and watch out for everything bigger.</p>
+          <p>Every level teaches the reef something new: pufferfish that bounce you away, anemones that sting, clams that snap shut, currents that sweep you off course and bosses that hunt you down. Grow through four size stages, chain your bites into a Feast Streak, and unlock new fish, hats, glasses and necklaces along the way.</p>
+          <p>It is built to be played in short bursts or long sessions - with a full Chapter 1 to conquer today and four more chapters of the ocean still to come.</p>
+        </div>
+        <div class="stats rv" id="stats" style="--d:.15s"></div>
+      </div>
+    </section>
 
-      <section>
-        <h2>2. How We Use Information</h2>
-        <p>The information collected is used to:</p>
-        <ul>
-          <li>Save and load your game progress</li>
-          <li>Improve game performance and balance</li>
-          <li>Fix bugs and enhance the user experience</li>
-        </ul>
-      </section>
+    <!-- ======================= HOW IT PLAYS ======================= -->
+    <section id="play">
+      <div class="wrap">
+        <div class="center rv">
+          <div class="eyebrow"><span class="depthtag">20 m</span> How it plays</div>
+          <h2 class="title">Easy to learn. Hard to stop.</h2>
+          <p class="lead">Four ideas, endless chaos.</p>
+        </div>
+        <div class="steps" id="steps"></div>
 
-      <section>
-        <h2>3. Third-Party Services</h2>
-        <p>Abyssal Feast may use third-party services that may collect information used to identify you. These may include:</p>
-        <ul>
-          <li>Google Play Services</li>
-          <li>Analytics tools, if implemented</li>
-          <li>Advertising networks, if implemented</li>
-        </ul>
-        <p>These third-party services have their own privacy policies governing how they use such information.</p>
-      </section>
+        <div class="streak glass rv">
+          <div>
+            <div class="eyebrow">Try it yourself</div>
+            <h3 style="font-size:clamp(1.8rem,3.6vw,2.6rem)">The Feast Streak</h3>
+            <p style="color:var(--mist)">Bite again within 3 seconds and your streak spells out another letter: FEAST, then FEAST RUSH, FEAST SURGE, FEASTSTORM, GRAND FEAST, SAVAGE FEAST - all the way to <b style="color:var(--sun)">ABYSSAL FEAST</b>. Reach it and the game roars the name - then it starts spelling again.</p>
+            <div class="tiers" id="tiers"></div>
+            <button class="btn" id="chomp" type="button">🐟 Chomp!</button>
+          </div>
+          <div class="streak-screen" id="streakscreen">
+            <div>
+              <div class="streak-word" id="streakword" aria-live="polite">&nbsp;</div>
+              <div class="streak-timer"><i id="streaktimer"></i></div>
+              <div class="streak-hint" id="streakhint">Press Chomp to take your first bite</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>4. Data Storage</h2>
-        <p>Game data such as progress, coins, and unlocks may be stored locally on your device using technologies such as PlayerPrefs.</p>
-        <p>Some features, such as redeem codes, may fetch data from external sources, such as GitHub-hosted files, but do not collect personal user data.</p>
-      </section>
+    <!-- ======================= FEATURES ======================= -->
+    <section id="features">
+      <div class="wrap">
+        <div class="center rv">
+          <div class="eyebrow"><span class="depthtag">35 m</span> Features</div>
+          <h2 class="title">Packed with ocean</h2>
+          <p class="lead">Everything in Abyssal Feast is built around one idea: the sea should feel alive.</p>
+        </div>
+        <div class="grid3" id="features-grid"></div>
+      </div>
+    </section>
 
-      <section>
-        <h2>5. Children’s Privacy</h2>
-        <p>This game is intended for a general audience. We do not knowingly collect personal information from children under the age of 13.</p>
-      </section>
+    <!-- ======================= FISH ======================= -->
+    <section id="fish">
+      <div class="wrap">
+        <div class="center rv">
+          <div class="eyebrow"><span class="depthtag">50 m</span> The swimmers</div>
+          <h2 class="title">Pick your fish</h2>
+          <p class="lead">Five playable fish, each with a unique special ability. Start with the Clownfish and unlock the rest in the Shop.</p>
+        </div>
+        <div class="showcase rv">
+          <div class="stage glass" id="stage"><div class="fishbox" id="fishbox"></div><div class="shadow"></div><div class="picks" id="picks" role="group" aria-label="Choose a fish"></div></div>
+          <div class="info glass" id="info"></div>
+        </div>
 
-      <section>
-        <h2>6. Security</h2>
-        <p>We take reasonable steps to protect your data. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
-      </section>
+        <div class="chain">
+          <div class="center rv">
+            <h2 class="title">The food chain</h2>
+            <p class="lead">Every fish has a size from 1 to 4. Eat what is smaller than you. Run from what is bigger.</p>
+          </div>
+          <div class="ladder" id="ladder"></div>
+          <div class="eatnote rv"><span class="chip">🐟 Smaller than you = food</span><span class="chip">⚠️ Bigger than you = danger</span><span class="chip">🐡 Puffed pufferfish = can't be eaten</span></div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>7. Your Rights</h2>
-        <p>Since we do not collect personal data, there is no personal information to access, update, or delete. If you wish to reset your data, you can clear the app data through your device settings.</p>
-      </section>
+    <!-- ======================= CHAPTER 1 ======================= -->
+    <section id="chapter1">
+      <div class="wrap">
+        <div class="chapter-hero rv">
+          <div class="mapbg"></div>
+          <div>
+            <div class="eyebrow" style="color:#fff"><span class="depthtag">80 m</span> Chapter 1</div>
+            <h2>The Shallows</h2>
+            <p class="lead">Warm, sunlit water above the reef. Coral, sand and small fish make it the perfect place to start growing - until the Swarm Queen shows up.</p>
+            <div class="badges"><span class="chip live">● Playable now</span><span class="chip">31 levels</span><span class="chip">2 boss fights</span><span class="chip">5 level types</span><span class="chip">Cave maze finale</span></div>
+          </div>
+        </div>
 
-      <section>
-        <h2>8. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page.</p>
-      </section>
+        <div class="journey glass rv">
+          <h3>The journey <span class="legend" id="legend"></span></h3>
+          <div class="dots" id="dots"></div>
+          <p style="margin:14px 0 0;color:var(--mist);font-size:.9rem">Tap any level to see what is new, what to watch out for, and a tip to survive it.</p>
+        </div>
 
-      <section>
-        <h2>9. Contact Us</h2>
-        <p>If you have any questions or concerns about this Privacy Policy, you can contact us at:</p>
-        <a class="contact-card" href="mailto:nazeehfazal12@gmail.com">nazeehfazal12@gmail.com</a>
-      </section>
-    </div>
+        <div class="filters rv" id="filters" role="group" aria-label="Filter levels"></div>
+        <div class="levels" id="levels"></div>
+      </div>
+    </section>
+
+    <!-- ======================= WILDLIFE ======================= -->
+    <section id="wildlife">
+      <div class="wrap">
+        <div class="center rv">
+          <div class="eyebrow"><span class="depthtag">110 m</span> The in-game wiki</div>
+          <h2 class="title">Wildlife of the Shallows</h2>
+          <p class="lead">Every creature, hazard and powerup you meet in Chapter 1 - with real-world facts, straight from the game's own Wiki.</p>
+        </div>
+        <div class="tabs rv" role="tablist" id="wtabs">
+          <button class="tab" role="tab" aria-selected="true" data-p="p-fish">Prey &amp; predators</button>
+          <button class="tab" role="tab" aria-selected="false" data-p="p-marine">Sea creatures</button>
+          <button class="tab" role="tab" aria-selected="false" data-p="p-events">Ocean events</button>
+          <button class="tab" role="tab" aria-selected="false" data-p="p-items">Powerups &amp; perks</button>
+        </div>
+        <div class="panel" id="p-fish"><div class="cards" id="c-fish"></div></div>
+        <div class="panel" id="p-marine" hidden><div class="cards" id="c-marine"></div></div>
+        <div class="panel" id="p-events" hidden><div class="cards" id="c-events"></div></div>
+        <div class="panel" id="p-items" hidden>
+          <h3 class="subhead">Powerups - floating bubbles</h3><div class="mini-grid" id="c-power"></div>
+          <h3 class="subhead">Perks - bring them into a level</h3><div class="mini-grid" id="c-perks"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= BOSSES ======================= -->
+    <section id="bosses">
+      <div class="wrap">
+        <div class="center rv">
+          <div class="eyebrow"><span class="depthtag">140 m</span> Boss fights</div>
+          <h2 class="title">Something big lives here</h2>
+          <p class="lead">No two fights are alike. Learn the pattern, find the weak spot, and don't stop swimming.</p>
+        </div>
+        <div id="boss-list"></div>
+      </div>
+    </section>
+
+    <!-- ======================= COLLECT ======================= -->
+    <section id="collect">
+      <div class="wrap">
+        <div class="center rv">
+          <div class="eyebrow"><span class="depthtag">160 m</span> Collect &amp; customise</div>
+          <h2 class="title">Dress your fish. Build your tank.</h2>
+          <p class="lead">Spend shells and black pearls in the Shop on new fish, perks and over 570 accessories - then show everything off in My Aquarium.</p>
+        </div>
+        <div class="marquee rv" id="m1"><div class="tracks" id="t1"></div></div>
+        <div class="marquee rev rv" id="m2" style="--dur:56s"><div class="tracks" id="t2"></div></div>
+
+        <div class="split" style="margin-top:56px">
+          <div class="rv">
+            <h3 style="font-size:2rem">My Aquarium</h3>
+            <p class="lead" style="font-size:1.1rem">A living tank for the fish you collect. Drop in coral, rocks and seaweed, move them around, pick a room around the glass and tidy up with the sponge and net. Tap any fish to zoom in on it.</p>
+            <p>Unlocks after Level 4 - together with the Shop.</p>
+          </div>
+          <div class="rooms rv" id="rooms"></div>
+        </div>
+
+        <div class="center rv" style="margin-top:80px">
+          <h2 class="title">Four ways to play</h2>
+        </div>
+        <div class="modes" id="modes"></div>
+      </div>
+    </section>
+
+    <!-- ======================= GALLERY ======================= -->
+    <section id="gallery">
+      <div class="wrap">
+        <div class="center rv">
+          <div class="eyebrow"><span class="depthtag">180 m</span> Gallery</div>
+          <h2 class="title">Scenes from the reef</h2>
+          <p class="lead" id="gallerylead">Art from the game's world. Tap an image to see it full size.</p>
+        </div>
+        <div class="shots" id="shots"></div>
+        <div id="video"></div>
+      </div>
+    </section>
+
+    <!-- ======================= CHAPTERS ======================= -->
+    <section id="chapters">
+      <div class="wrap">
+        <div class="center rv">
+          <div class="eyebrow"><span class="depthtag">200 m+</span> What's next</div>
+          <h2 class="title">The ocean goes deeper</h2>
+          <p class="lead">Chapter 1 is only the beginning. Four more chapters of new biomes, bigger predators and stranger creatures are in the works.</p>
+        </div>
+        <div class="chapters" id="chapter-list"></div>
+        <p class="coming">More fish. More bosses. More ocean. 🌊</p>
+      </div>
+    </section>
+
+    <!-- ======================= FAQ ======================= -->
+    <section id="faq">
+      <div class="wrap">
+        <div class="center rv">
+          <div class="eyebrow">Questions</div>
+          <h2 class="title">Good to know</h2>
+        </div>
+        <div class="faq" id="faq-list"></div>
+      </div>
+    </section>
+
+    <!-- ======================= GET ======================= -->
+    <section id="get" style="padding-bottom:60px">
+      <div class="wrap">
+        <div class="cta-card glass rv">
+          <h2 class="title">Ready to dive in?</h2>
+          <p class="lead" style="margin-inline:auto">Abyssal Feast is heading to Google Play. Follow the news, tell us what you think, and be ready to feast.</p>
+          <div class="hero-actions" id="cta-links"></div>
+          <p class="fine">By NP Games &middot; No ads &middot; No tracking &middot; <a href="privacy/">Privacy Policy</a></p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    © 2026 Abyssal Feast. All rights reserved.
+    <div class="wrap">
+      <div class="fgrid">
+        <div><img src="assets/img/logo.png" alt="Abyssal Feast" width="140" height="62" loading="lazy"><p>A colourful underwater survival game by NP Games. Eat, grow and rule the reef.</p></div>
+        <div><h4>The game</h4><ul><li><a href="#about">About</a></li><li><a href="#fish">Fish</a></li><li><a href="#chapter1">Chapter 1</a></li><li><a href="#chapters">What's next</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="privacy/">Privacy Policy</a></li><li><a href="terms/">Terms of Use</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="mailto:nazeehfazal12@gmail.com">nazeehfazal12@gmail.com</a></li><li id="f-links"></li></ul></div>
+      </div>
+      <div class="copy"><span>&copy; 2026 NP Games. Abyssal Feast and its art, music and code belong to the developer.</span><span>Made with ❤ by Nazeeh Pullat</span></div>
+    </div>
   </footer>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle" aria-hidden="true">
+    <div class="mdl" id="mdl"></div>
+  </div>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer"><img id="lbimg" alt=""><p id="lbcap"></p></div>
+
+  <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
