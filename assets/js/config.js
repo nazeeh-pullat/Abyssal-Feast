@@ -3,6 +3,7 @@ window.AF_CONFIG = {
   links: {
     googlePlay: "",        // e.g. "https://play.google.com/store/apps/details?id=com.NPGames.AbyssalFeast"
     discord: "https://discord.gg/xsfxD953wG",   // Abyssal Feast Discord invite
+    donate: "https://paypal.me/nazeehpullat",   // PayPal.me donation page
     youtube: "",           // your channel or trailer page
     tiktok: "",
     instagram: ""
