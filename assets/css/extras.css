@@ -46,20 +46,20 @@
 @keyframes rip { to { transform: scale(3.2); opacity: 0; } }
 @keyframes cb { to { transform: translate(var(--x), var(--y)) scale(1.6); opacity: 0; } }
 
-/* ---------- entry variants: grid children enter from different directions ---------- */
-.rv { will-change: opacity, transform; }
-.grid3 > .rv:nth-child(3n+1), #features-grid > .rv:nth-child(3n+1) { transform: translate(-44px, 26px) rotate(-2deg); }
-.grid3 > .rv:nth-child(3n+3), #features-grid > .rv:nth-child(3n+3) { transform: translate(44px, 26px) rotate(2deg); }
-.steps > .rv { transform: translateY(50px) scale(.92); }
-.modes > .rv:nth-child(odd) { transform: translateX(-50px); }
-.modes > .rv:nth-child(even) { transform: translateX(50px); }
-.levels > .rv { transform: translateY(40px) scale(.94); }
-.shots > .rv { transform: scale(.88) rotate(-1.5deg); }
-.chapters > .rv { transform: translateY(46px) scale(.95); }
-.rung.rv { transform: translateX(-60px); }
-.boss.rv { transform: translateY(60px) scale(.96); }
-details.rv { transform: translateX(-30px); }
+/* ---------- entry variants: grid children enter from different directions (variables, so .rv.in always wins) ---------- */
+.rv { will-change: opacity, transform; transform: translate(var(--rx, 0px), var(--ry, 34px)) rotate(var(--rr, 0deg)) scale(var(--rs, 1)); }
 .rv.in { transform: none; }
+.grid3 > .rv:nth-child(3n+1), #features-grid > .rv:nth-child(3n+1) { --rx: -44px; --ry: 26px; --rr: -2deg; }
+.grid3 > .rv:nth-child(3n+3), #features-grid > .rv:nth-child(3n+3) { --rx: 44px; --ry: 26px; --rr: 2deg; }
+.steps > .rv { --ry: 50px; --rs: .92; }
+.modes > .rv:nth-child(odd) { --rx: -50px; --ry: 20px; }
+.modes > .rv:nth-child(even) { --rx: 50px; --ry: 20px; }
+.levels > .rv { --ry: 40px; --rs: .94; }
+.shots > .rv { --ry: 0px; --rs: .88; --rr: -1.5deg; }
+.chapters > .rv { --ry: 46px; --rs: .95; }
+.rung.rv { --rx: -60px; --ry: 0px; }
+.boss.rv { --ry: 60px; --rs: .96; }
+details.rv { --rx: -30px; --ry: 0px; }
 
 /* ---------- idle motion (on children, so it never fights reveal / tilt transforms) ---------- */
 .step .ico, .feat .ico, .mode .ico { animation: drift 7s ease-in-out infinite; }
@@ -213,3 +213,16 @@ img, svg { max-width: 100%; }
 .acc { --pad: 14px; position: relative; display: block; }
 .acc img { position: absolute; inset: var(--pad); width: calc(100% - var(--pad) * 2); height: calc(100% - var(--pad) * 2); max-width: none; max-height: none; object-fit: contain; object-position: center; }
 @media (max-width: 620px) { .acc { --pad: 11px; } }
+
+/* ---------- Four ways to play: equal-height cards with a colour accent each ---------- */
+.modes { align-items: stretch; }
+.mode { --ac: var(--aqua); display: flex; flex-direction: column; align-items: flex-start; position: relative; overflow: hidden; padding: 28px 24px 24px; }
+.mode:nth-child(1) { --ac: #5eead4; } .mode:nth-child(2) { --ac: #ff7a7a; } .mode:nth-child(3) { --ac: #ffd166; } .mode:nth-child(4) { --ac: #a78bfa; }
+.mode::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--ac), transparent); }
+.mode::after { content: ""; position: absolute; width: 220px; height: 220px; right: -90px; top: -90px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--ac) 30%, transparent), transparent 65%); pointer-events: none; transition: transform .5s; }
+.mode:hover::after { transform: scale(1.5); }
+.mode .ico { color: var(--ac); background: color-mix(in srgb, var(--ac) 16%, transparent); border-color: color-mix(in srgb, var(--ac) 45%, transparent); }
+.mode:hover { border-color: var(--ac); box-shadow: 0 22px 46px rgba(0, 10, 25, .5), 0 0 30px color-mix(in srgb, var(--ac) 25%, transparent); }
+.mode h3 { margin: 4px 0 6px; }
+.mode p { flex: 1; margin: 0 0 18px; }
+.mode .chip { margin-top: auto; }
