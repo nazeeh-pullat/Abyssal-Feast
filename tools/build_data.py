@@ -98,10 +98,10 @@ BOSSES = [
 ]
 
 EVENTS = [
-    dict(name="Tidal Current", level=21, icon="🌊", fact=fact("Tidal Current"), tag="Gentle current drifts every fish one way"),
-    dict(name="Rip Current", level=23, icon="🌀", fact=fact("Passing Current (Rip Current)"), tag="A fast band of water shoves you along"),
-    dict(name="School Rush", level=25, icon="🐟", fact=fact("School Rush"), tag="Bite the calm front for a bonus"),
-    dict(name="Drifting Debris", level=1, icon="🪵", fact=fact("Drifting Debris"), tag="Junk tumbles through the water"),
+    dict(name="Tidal Current", level=21, icon="waves", fact=fact("Tidal Current"), tag="Gentle current drifts every fish one way"),
+    dict(name="Rip Current", level=23, icon="swirl", fact=fact("Passing Current (Rip Current)"), tag="A fast band of water shoves you along"),
+    dict(name="School Rush", level=25, icon="school", fact=fact("School Rush"), tag="Bite the calm front for a bonus"),
+    dict(name="Drifting Debris", level=1, icon="log", fact=fact("Drifting Debris"), tag="Junk tumbles through the water"),
 ]
 
 POWERUPS = [
@@ -186,25 +186,25 @@ lv(31, "The Maze", "maze", 10, "The last stretch of the Shallows: swim through a
 
 # ------------------------------------------------------------------ the rest of the site content
 FEATURES = [
-    dict(icon="🐠", title="Eat. Grow. Survive.", text="Swim with one thumb, chomp fish smaller than you and grow through size stages - but anything bigger is hunting you."),
-    dict(icon="✨", title="5 playable fish", text="Clownfish, Dartfish, Pufferfish, Royal Gramma and Yellow Tang - each with its own special ability, speed and hearts."),
-    dict(icon="🗺️", title="31 levels in Chapter 1", text="Eating races, timed shell runs, hunts, riptide survival, a maze finale - and every level introduces something new."),
-    dict(icon="🦀", title="Real boss fights", text="Dodge the Peacock Mantis Shrimp's leaps and take on the two-phase Swarm Queen with her spikes, larvae and weak points."),
-    dict(icon="🌊", title="A living ocean", text="Tidal currents, rip currents, school stampedes, drifting debris, stinging anemones and snapping giant clams."),
-    dict(icon="🔥", title="Feast Streak combos", text="Chain bites to spell FEAST, then keep climbing through six more tiers all the way to ABYSSAL FEAST."),
-    dict(icon="🎩", title="570+ accessories", text="Hats, glasses and necklaces for every fish - from wizard hats and pirate caps to halos and crowns."),
-    dict(icon="🐟", title="My Aquarium", text="Build a living tank with the fish you collect: decorate it, place coral and rocks, pick a room and use the sponge and net."),
-    dict(icon="🏆", title="190+ achievements", text="Collect them all - plus an in-game Wiki that fills in as you discover new fish, creatures and events."),
-    dict(icon="🎵", title="Your music, your game", text="Play your own music while you swim, and in Custom mode add your own fish pictures from your device."),
-    dict(icon="🎮", title="4 ways to play", text="Story Mode, two-player PVP on one device, Random Quickstart and fully custom games."),
-    dict(icon="🔒", title="No accounts. No tracking.", text="No sign-in, no ads and no analytics. Your progress lives on your device and the game plays offline."),
+    dict(icon="fish", title="Eat. Grow. Survive.", text="Swim with one thumb, chomp fish smaller than you and grow through size stages - but anything bigger is hunting you."),
+    dict(icon="star", title="5 playable fish", text="Clownfish, Dartfish, Pufferfish, Royal Gramma and Yellow Tang - each with its own special ability, speed and hearts."),
+    dict(icon="map", title="31 levels in Chapter 1", text="Eating races, timed shell runs, hunts, riptide survival, a maze finale - and every level introduces something new."),
+    dict(icon="swords", title="Real boss fights", text="Dodge the Peacock Mantis Shrimp's leaps and take on the two-phase Swarm Queen with her spikes, larvae and weak points."),
+    dict(icon="waves", title="A living ocean", text="Tidal currents, rip currents, school stampedes, drifting debris, stinging anemones and snapping giant clams."),
+    dict(icon="flame", title="Feast Streak combos", text="Chain bites to spell FEAST, then keep climbing through six more tiers all the way to ABYSSAL FEAST."),
+    dict(icon="hat", title="570+ accessories", text="Hats, glasses and necklaces for every fish - from wizard hats and pirate caps to halos and crowns."),
+    dict(icon="tank", title="My Aquarium", text="Build a living tank with the fish you collect: decorate it, place coral and rocks, pick a room and use the sponge and net."),
+    dict(icon="trophy", title="190+ achievements", text="Collect them all - plus an in-game Wiki that fills in as you discover new fish, creatures and events."),
+    dict(icon="music", title="Your music, your game", text="Play your own music while you swim, and in Custom mode add your own fish pictures from your device."),
+    dict(icon="gamepad", title="4 ways to play", text="Story Mode, two-player PVP on one device, Random Quickstart and fully custom games."),
+    dict(icon="lock", title="No accounts. No tracking.", text="No sign-in, no ads and no analytics. Your progress lives on your device and the game plays offline."),
 ]
 
 MODES = [
-    dict(icon="🗺️", name="Story Mode", text="The campaign. Pick a level on the map and swim your way through the chapters.", open="Open from the start"),
-    dict(icon="⚔️", name="PVP", text="Two players, one device. Split Screen Duel, Score Race or Last Fish Standing.", open="Unlocks after Level 4"),
-    dict(icon="🎲", name="Random Quickstart", text="A surprise game: random level, fish, size mix, ability, powerups and ocean effects.", open="Unlocks after Level 4"),
-    dict(icon="🛠️", name="Custom", text="Build your own game: pick everything yourself and add your own fish from your device.", open="Unlocks after Level 4"),
+    dict(icon="map", name="Story Mode", text="The campaign. Pick a level on the map and swim your way through the chapters.", open="Open from the start"),
+    dict(icon="swords", name="PVP", text="Two players, one device. Split Screen Duel, Score Race or Last Fish Standing.", open="Unlocks after Level 4"),
+    dict(icon="dice", name="Random Quickstart", text="A surprise game: random level, fish, size mix, ability, powerups and ocean effects.", open="Unlocks after Level 4"),
+    dict(icon="sliders", name="Custom", text="Build your own game: pick everything yourself and add your own fish from your device.", open="Unlocks after Level 4"),
 ]
 
 CHAPTERS = [

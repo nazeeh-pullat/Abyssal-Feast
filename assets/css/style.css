@@ -259,7 +259,7 @@ h2.title { font-size: clamp(2.1rem, 5vw, 3.7rem); background: linear-gradient(18
 .lcard .body { padding: 14px 18px 18px; display: grid; gap: 6px; }
 .lcard h3 { font-size: 1.3rem; margin: 0; }
 .lcard p { margin: 0; font-size: .9rem; color: var(--mist); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.lcard.boss { box-shadow: 0 0 0 2px color-mix(in srgb, var(--tc) 70%, transparent); }
+.lcard.isboss { box-shadow: 0 0 0 2px color-mix(in srgb, var(--tc) 70%, transparent); }
 .lcard.hide { display: none; }
 
 .modal { position: fixed; inset: 0; z-index: 90; display: none; align-items: center; justify-content: center; padding: 18px; background: rgba(1, 10, 20, .78); backdrop-filter: blur(8px); }
@@ -275,7 +275,7 @@ h2.title { font-size: clamp(2.1rem, 5vw, 3.7rem); background: linear-gradient(18
 .mdl h3 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 0; }
 .mdl ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
 .mdl li { display: flex; gap: 10px; align-items: flex-start; font-weight: 700; }
-.mdl li::before { content: "✦"; color: var(--sun); }
+.mdl li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--sun); display: inline-block; margin-right: 8px; position: relative; top: -1px; }
 .tip { padding: 14px 16px; border-radius: 14px; background: rgba(94, 234, 212, .12); border: 1px dashed rgba(94, 234, 212, .55); color: #d9fff6; font-weight: 700; }
 .tip::before { content: "TIP  "; font-weight: 900; color: var(--aqua); letter-spacing: .12em; }
 .mnav { display: flex; gap: 10px; margin-top: 6px; }
@@ -317,7 +317,7 @@ h2.title { font-size: clamp(2.1rem, 5vw, 3.7rem); background: linear-gradient(18
 .bossart .swap { position: absolute; inset: 0; margin: auto; opacity: 0; }
 .boss .moves { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 10px; }
 .boss .moves li { padding: 12px 14px 12px 42px; border-radius: 14px; background: rgba(255,255,255,.06); border: 1px solid var(--line); position: relative; font-weight: 700; font-size: .96rem; }
-.boss .moves li::before { content: "⚔"; position: absolute; left: 14px; top: 11px; color: var(--red); }
+.boss .moves li::before { content: ""; position: absolute; left: 16px; top: 19px; width: 10px; height: 10px; border-radius: 3px; transform: rotate(45deg); background: var(--red); }
 .bosstag { display: inline-flex; align-items: center; gap: .5em; color: #fff; background: linear-gradient(180deg, #ff6b6b, #c71f3b); padding: .3em .9em; border-radius: 999px; font-weight: 900; letter-spacing: .1em; font-size: .76rem; text-transform: uppercase; box-shadow: 0 6px 18px rgba(255, 60, 60, .4); }
 
 /* ---------- collect / style ---------- */

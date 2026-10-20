@@ -369,28 +369,28 @@ window.AF_DATA = {
   {
    "name": "Tidal Current",
    "level": 21,
-   "icon": "🌊",
+   "icon": "waves",
    "fact": "Tides move huge amounts of water in and out of the reef every day, and even a gentle tide carries plankton, fish and divers with it. In the game a calm, level-wide current sets in now and then and drifts you - and every other fish - in one direction. Bubbles show which way it flows.",
    "tag": "Gentle current drifts every fish one way"
   },
   {
    "name": "Rip Current",
    "level": 23,
-   "icon": "🌀",
+   "icon": "swirl",
    "fact": "Rip currents are narrow, fast rivers of water that run out through gaps in the reef and can sweep a swimmer far off course. In the game a band of fast water sweeps across the level: it flings you around, so swim across it instead of fighting it, and be ready to steer again when it passes. Riptide Run levels are full of them.",
    "tag": "A fast band of water shoves you along"
   },
   {
    "name": "School Rush",
    "level": 25,
-   "icon": "🐟",
+   "icon": "school",
    "fact": "Thousands of small fish moving as one confuse predators, which find it hard to pick a single target - and a startled school can burst across the reef in seconds. In the game 10 to 15 small fish suddenly rush across the level; anything in their wake is tossed about, while the front of the school is calm. Eat the whole school for a School Bonus of 100 shells.",
    "tag": "Bite the calm front for a bonus"
   },
   {
    "name": "Drifting Debris",
    "level": 1,
-   "icon": "🪵",
+   "icon": "log",
    "fact": "Storms, tides and passing boats stir up sunken junk, driftwood and bits of plastic that tumble through the water for days. In the game pieces of debris drift across the level and bump anything in their way, so swim around them - and remember that the strong currents in Riptide Run carry them faster.",
    "tag": "Junk tumbles through the water"
   }
@@ -795,87 +795,87 @@ window.AF_DATA = {
  ],
  "features": [
   {
-   "icon": "🐠",
+   "icon": "fish",
    "title": "Eat. Grow. Survive.",
    "text": "Swim with one thumb, chomp fish smaller than you and grow through size stages - but anything bigger is hunting you."
   },
   {
-   "icon": "✨",
+   "icon": "star",
    "title": "5 playable fish",
    "text": "Clownfish, Dartfish, Pufferfish, Royal Gramma and Yellow Tang - each with its own special ability, speed and hearts."
   },
   {
-   "icon": "🗺️",
+   "icon": "map",
    "title": "31 levels in Chapter 1",
    "text": "Eating races, timed shell runs, hunts, riptide survival, a maze finale - and every level introduces something new."
   },
   {
-   "icon": "🦀",
+   "icon": "swords",
    "title": "Real boss fights",
    "text": "Dodge the Peacock Mantis Shrimp's leaps and take on the two-phase Swarm Queen with her spikes, larvae and weak points."
   },
   {
-   "icon": "🌊",
+   "icon": "waves",
    "title": "A living ocean",
    "text": "Tidal currents, rip currents, school stampedes, drifting debris, stinging anemones and snapping giant clams."
   },
   {
-   "icon": "🔥",
+   "icon": "flame",
    "title": "Feast Streak combos",
    "text": "Chain bites to spell FEAST, then keep climbing through six more tiers all the way to ABYSSAL FEAST."
   },
   {
-   "icon": "🎩",
+   "icon": "hat",
    "title": "570+ accessories",
    "text": "Hats, glasses and necklaces for every fish - from wizard hats and pirate caps to halos and crowns."
   },
   {
-   "icon": "🐟",
+   "icon": "tank",
    "title": "My Aquarium",
    "text": "Build a living tank with the fish you collect: decorate it, place coral and rocks, pick a room and use the sponge and net."
   },
   {
-   "icon": "🏆",
+   "icon": "trophy",
    "title": "190+ achievements",
    "text": "Collect them all - plus an in-game Wiki that fills in as you discover new fish, creatures and events."
   },
   {
-   "icon": "🎵",
+   "icon": "music",
    "title": "Your music, your game",
    "text": "Play your own music while you swim, and in Custom mode add your own fish pictures from your device."
   },
   {
-   "icon": "🎮",
+   "icon": "gamepad",
    "title": "4 ways to play",
    "text": "Story Mode, two-player PVP on one device, Random Quickstart and fully custom games."
   },
   {
-   "icon": "🔒",
+   "icon": "lock",
    "title": "No accounts. No tracking.",
    "text": "No sign-in, no ads and no analytics. Your progress lives on your device and the game plays offline."
   }
  ],
  "modes": [
   {
-   "icon": "🗺️",
+   "icon": "map",
    "name": "Story Mode",
    "text": "The campaign. Pick a level on the map and swim your way through the chapters.",
    "open": "Open from the start"
   },
   {
-   "icon": "⚔️",
+   "icon": "swords",
    "name": "PVP",
    "text": "Two players, one device. Split Screen Duel, Score Race or Last Fish Standing.",
    "open": "Unlocks after Level 4"
   },
   {
-   "icon": "🎲",
+   "icon": "dice",
    "name": "Random Quickstart",
    "text": "A surprise game: random level, fish, size mix, ability, powerups and ocean effects.",
    "open": "Unlocks after Level 4"
   },
   {
-   "icon": "🛠️",
+   "icon": "sliders",
    "name": "Custom",
    "text": "Build your own game: pick everything yourself and add your own fish from your device.",
    "open": "Unlocks after Level 4"

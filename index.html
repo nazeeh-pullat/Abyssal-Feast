@@ -16,6 +16,7 @@
   <link rel="preload" href="assets/fonts/lilita-one-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/img/hero-bg.webp" as="image">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/extras.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"VideoGame","name":"Abyssal Feast","description":"A colourful underwater survival game where you start as a tiny clownfish and eat your way up the food chain.","genre":["Arcade","Action","Survival"],"gamePlatform":"Android","applicationCategory":"Game","publisher":{"@type":"Organization","name":"NP Games"},"author":{"@type":"Person","name":"Nazeeh Pullat"},"image":"assets/img/og.jpg","inLanguage":"en"}
   </script>
@@ -61,7 +62,7 @@
           <a class="btn ghost" href="#fish">Meet the fish</a>
         </div>
         <div class="pills">
-          <span class="chip">📱 Android</span><span class="chip">📴 Plays offline</span><span class="chip">🚫 No ads</span><span class="chip">🔒 No accounts</span>
+          <span class="chip" data-ic="phone">Android</span><span class="chip" data-ic="wifioff">Plays offline</span><span class="chip" data-ic="ban">No ads</span><span class="chip" data-ic="shield">No accounts</span>
         </div>
       </div>
       <div class="scrollcue" aria-hidden="true"></div>
@@ -97,7 +98,7 @@
             <h3 style="font-size:clamp(1.8rem,3.6vw,2.6rem)">The Feast Streak</h3>
             <p style="color:var(--mist)">Bite again within 3 seconds and your streak spells out another letter: FEAST, then FEAST RUSH, FEAST SURGE, FEASTSTORM, GRAND FEAST, SAVAGE FEAST - all the way to <b style="color:var(--sun)">ABYSSAL FEAST</b>. Reach it and the game roars the name - then it starts spelling again.</p>
             <div class="tiers" id="tiers"></div>
-            <button class="btn" id="chomp" type="button">🐟 Chomp!</button>
+            <button class="btn" id="chomp" type="button" data-ic="fish">Chomp!</button>
           </div>
           <div class="streak-screen" id="streakscreen">
             <div>
@@ -141,7 +142,7 @@
             <p class="lead">Every fish has a size from 1 to 4. Eat what is smaller than you. Run from what is bigger.</p>
           </div>
           <div class="ladder" id="ladder"></div>
-          <div class="eatnote rv"><span class="chip">🐟 Smaller than you = food</span><span class="chip">⚠️ Bigger than you = danger</span><span class="chip">🐡 Puffed pufferfish = can't be eaten</span></div>
+          <div class="eatnote rv"><span class="chip" data-ic="fish">Smaller than you = food</span><span class="chip" data-ic="warn">Bigger than you = danger</span><span class="chip" data-ic="puffer">Puffed pufferfish = can't be eaten</span></div>
         </div>
       </div>
     </section>
@@ -155,7 +156,7 @@
             <div class="eyebrow" style="color:#fff"><span class="depthtag">80 m</span> Chapter 1</div>
             <h2>The Shallows</h2>
             <p class="lead">Warm, sunlit water above the reef. Coral, sand and small fish make it the perfect place to start growing - until the Swarm Queen shows up.</p>
-            <div class="badges"><span class="chip live">● Playable now</span><span class="chip">31 levels</span><span class="chip">2 boss fights</span><span class="chip">5 level types</span><span class="chip">Cave maze finale</span></div>
+            <div class="badges"><span class="chip live"><i class="pulse"></i>Playable now</span><span class="chip">31 levels</span><span class="chip">2 boss fights</span><span class="chip">5 level types</span><span class="chip">Cave maze finale</span></div>
           </div>
         </div>
 
@@ -255,7 +256,7 @@
           <p class="lead">Chapter 1 is only the beginning. Four more chapters of new biomes, bigger predators and stranger creatures are in the works.</p>
         </div>
         <div class="chapters" id="chapter-list"></div>
-        <p class="coming">More fish. More bosses. More ocean. 🌊</p>
+        <p class="coming">More fish. More bosses. More ocean.</p>
       </div>
     </section>
 
@@ -291,7 +292,7 @@
         <div><h4>Legal</h4><ul><li><a href="privacy/">Privacy Policy</a></li><li><a href="terms/">Terms of Use</a></li></ul></div>
         <div><h4>Contact</h4><ul><li><a href="mailto:nazeehfazal12@gmail.com">nazeehfazal12@gmail.com</a></li><li id="f-links"></li></ul></div>
       </div>
-      <div class="copy"><span>&copy; 2026 NP Games. Abyssal Feast and its art, music and code belong to the developer.</span><span>Made with ❤ by Nazeeh Pullat</span></div>
+      <div class="copy"><span>&copy; 2026 NP Games. Abyssal Feast and its art, music and code belong to the developer.</span><span>Made with <span data-ic="heart" class="inl"></span> by Nazeeh Pullat</span></div>
     </div>
   </footer>
 
@@ -302,6 +303,7 @@
 
   <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
   <script src="assets/js/config.js"></script>
+  <script src="assets/js/icons.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

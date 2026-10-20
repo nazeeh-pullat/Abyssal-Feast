@@ -2,6 +2,7 @@
 (function () {
   "use strict";
   const D = window.AF_DATA, C = window.AF_CONFIG || { links: {} };
+  const ic = window.AF_ICON || (() => "");
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches && !/[?&]motion=1/.test(location.search);
@@ -77,17 +78,17 @@
   }
 
   function renderSteps() {
-    const steps = [["👆", "Swim", "Drag anywhere to steer. One thumb is all you need - and you can move the ability button to either side."], ["🍤", "Eat smaller fish", "Anything smaller than you is food. Anything bigger is hunting you. Watch the size of every fish."],
-      ["📈", "Grow & win", "Every bite fills your growth bar. Grow through the size stages, fill it up and the level is yours - but lose all your hearts and it's over."], ["⚡", "Use your ability", "Every fish has a special power: suck in prey, dash, puff up, vanish or speed away. Tap it at the right moment."]];
-    $("#steps").innerHTML = steps.map(([i, t, p]) => `<div class="step glass rv" data-tilt><div class="ico">${i}</div><h3>${t}</h3><p>${p}</p></div>`).join("");
+    const steps = [["tap", "Swim", "Drag anywhere to steer. One thumb is all you need - and you can move the ability button to either side."], ["fish", "Eat smaller fish", "Anything smaller than you is food. Anything bigger is hunting you. Watch the size of every fish."],
+      ["growth", "Grow & win", "Every bite fills your growth bar. Grow through the size stages, fill it up and the level is yours - but lose all your hearts and it's over."], ["bolt", "Use your ability", "Every fish has a special power: suck in prey, dash, puff up, vanish or speed away. Tap it at the right moment."]];
+    $("#steps").innerHTML = steps.map(([i, t, p]) => `<div class="step glass rv" data-tilt><div class="ico">${ic(i)}</div><h3>${t}</h3><p>${p}</p></div>`).join("");
   }
 
   function renderFeatures() {
-    $("#features-grid").innerHTML = D.features.map((f) => `<article class="feat glass rv" data-tilt><div class="ico">${f.icon}</div><h3>${esc(f.title)}</h3><p>${esc(f.text)}</p></article>`).join("");
+    $("#features-grid").innerHTML = D.features.map((f) => `<article class="feat glass rv" data-tilt><div class="ico">${ic(f.icon)}</div><h3>${esc(f.title)}</h3><p>${esc(f.text)}</p></article>`).join("");
   }
 
   function renderModes() {
-    $("#modes").innerHTML = D.modes.map((m) => `<article class="mode glass rv" data-tilt><div class="ico">${m.icon}</div><h3>${m.name}</h3><p>${m.text}</p><span class="chip">${m.open}</span></article>`).join("");
+    $("#modes").innerHTML = D.modes.map((m) => `<article class="mode glass rv" data-tilt><div class="ico">${ic(m.icon)}</div><h3>${m.name}</h3><p>${m.text}</p><span class="chip">${m.open}</span></article>`).join("");
   }
 
   function renderRooms() {
@@ -101,7 +102,7 @@
       "hat_mini_windmill_hat", "hat_gold_top_hat", "hat_gold_laurel_crown", "face_gear_eye_visor", "face_donut_eye_frame", "face_lightning_eye_lens", "face_camera_lens_eye", "face_magnifier_loupe", "neck_jellyfish_charm", "neck_trophy_charm", "neck_sun_medallion",
       "neck_treasure_map_pendant", "neck_lucky_horseshoe_charm", "neck_shell_brooch", "neck_lantern_charm", "neck_jingle_bell", "neck_lighthouse_pendant"];
     const pretty = (n) => n.replace(/^(hat|face|neck)_/, "").replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-    const make = (list) => { const h = list.map((n) => `<div class="acc" title="${pretty(n)}"><img src="${IMG}acc/${n}.webp" alt="${pretty(n)}" loading="lazy" width="78" height="78"></div>`).join(""); return h + h; };
+    const make = (list) => { const h = list.map((n) => `<div class="acc" title="${pretty(n)}"><img src="${IMG}acc/${n}.webp" alt="${pretty(n)}" loading="lazy"></div>`).join(""); return h + h; };
     const half = Math.ceil(names.length / 2);
     $("#t1").innerHTML = make(names.slice(0, half)); $("#t2").innerHTML = make(names.slice(half));
   }
@@ -113,8 +114,8 @@
   function renderChapters() {
     $("#chapter-list").innerHTML = D.chapters.map((c) => {
       const cls = c.status === "live" ? "live" : c.classified ? "soon classified" : "soon";
-      const chip = c.status === "live" ? `<span class="chip live">● Playable now</span>` : `<span class="chip soon">Coming soon</span>`;
-      return `<article class="ch ${cls} rv"><div class="cbg" style="background-image:url(${IMG}${c.map}.webp)"></div>${c.status === "live" ? "" : `<div class="lock" aria-hidden="true">${c.classified ? "🔒" : "🌿"}</div>`}
+      const chip = c.status === "live" ? `<span class="chip live"><i class="pulse"></i>Playable now</span>` : `<span class="chip soon">Coming soon</span>`;
+      return `<article class="ch ${cls} rv"><div class="cbg" style="background-image:url(${IMG}${c.map}.webp)"></div>${c.status === "live" ? "" : `<div class="lock" aria-hidden="true">${ic(c.classified ? "lock" : "leaf")}</div>`}
         <div class="num">${c.n}</div><h3>${c.classified ? "Chapter " + c.n + " · ???" : esc(c.name)}</h3><p>${esc(c.text)}</p>${chip}
         ${c.status === "live" ? `<a class="btn go" href="#chapter1" style="padding:.6em 1.2em;font-size:.88rem">Explore</a>` : ""}</article>`;
     }).join("");
@@ -122,10 +123,10 @@
 
   function renderCTA() {
     const L = C.links || {}, out = [];
-    out.push(L.googlePlay ? `<a class="btn" href="${esc(L.googlePlay)}" target="_blank" rel="noopener">▶ Get it on Google Play</a>` : `<span class="btn" aria-disabled="true" style="--c1:#b8cfd8;--c2:#7fa0ae;box-shadow:0 8px 0 rgba(20,60,80,.5)">▶ Google Play - coming soon</span>`);
-    if (L.discord) out.push(`<a class="btn ghost" href="${esc(L.discord)}" target="_blank" rel="noopener">💬 Join the Discord</a>`);
-    if (L.youtube) out.push(`<a class="btn ghost" href="${esc(L.youtube)}" target="_blank" rel="noopener">▶ YouTube</a>`);
-    out.push(`<a class="btn ghost" href="mailto:nazeehfazal12@gmail.com">✉ Say hello</a>`);
+    out.push(L.googlePlay ? `<a class="btn" href="${esc(L.googlePlay)}" target="_blank" rel="noopener">${ic("play")} Get it on Google Play</a>` : `<span class="btn" aria-disabled="true" style="--c1:#b8cfd8;--c2:#7fa0ae;box-shadow:0 8px 0 rgba(20,60,80,.5)">${ic("play")} Google Play - coming soon</span>`);
+    if (L.discord) out.push(`<a class="btn ghost" href="${esc(L.discord)}" target="_blank" rel="noopener">${ic("chat")} Join the Discord</a>`);
+    if (L.youtube) out.push(`<a class="btn ghost" href="${esc(L.youtube)}" target="_blank" rel="noopener">${ic("play")} YouTube</a>`);
+    out.push(`<a class="btn ghost" href="mailto:nazeehfazal12@gmail.com">${ic("mail")} Say hello</a>`);
     $("#cta-links").innerHTML = out.join("");
     const f = [L.discord && ["Discord", L.discord], L.youtube && ["YouTube", L.youtube], L.tiktok && ["TikTok", L.tiktok], L.instagram && ["Instagram", L.instagram]].filter(Boolean);
     $("#f-links").innerHTML = f.map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${n}</a>`).join(" · ");
@@ -136,7 +137,7 @@
     const picks = $("#picks"), box = $("#fishbox"), info = $("#info");
     const all = [...D.player, { id: "secret", secret: true }];
     picks.innerHTML = all.map((f, i) => `<button class="pick ${f.secret ? "secret" : ""}" type="button" data-i="${i}" aria-pressed="${i === 0}" aria-label="${f.secret ? "Secret fish" : f.name}"><img src="${f.secret ? IMG + "fish/secret.webp" : src(f.img)}" alt="" loading="lazy"></button>`).join("");
-    const segs = (n, max, cls = "") => `<div class="segs ${cls}">${Array.from({ length: max }, (_, i) => `<i class="${i < n ? "on" : ""}">${cls ? "❤" : ""}</i>`).join("")}</div>`;
+    const segs = (n, max, cls = "") => `<div class="segs ${cls}">${Array.from({ length: max }, (_, i) => `<i class="${i < n ? "on" : ""}">${cls ? ic("heart") : ""}</i>`).join("")}</div>`;
     function show(i) {
       const f = all[i];
       $$(".pick", picks).forEach((b, j) => b.setAttribute("aria-pressed", j === i));
@@ -147,7 +148,7 @@
       }
       if (f.sheet) { box.innerHTML = spriteHTML(f.sheet, ""); hydrateSprites(box); } else box.innerHTML = `<img src="${src(f.img)}" alt="${esc(f.name)}">`;
       info.innerHTML = `<span class="chip" style="align-self:flex-start">${esc(f.how)}</span><h3>${esc(f.name)}</h3>
-        <div class="ability"><div><b>⚡ ${esc(f.ability)}</b><span>${esc(f.abilityText)}</span></div></div>
+        <div class="ability"><div><b>${ic("bolt")} ${esc(f.ability)}</b><span>${esc(f.abilityText)}</span></div></div>
         <div class="bars"><div class="bar"><span>Health</span>${segs(f.hearts, 3, "hearts")}</div><div class="bar"><span>Speed</span>${segs(f.speed, 10)}</div></div>
         <p class="fact">${esc(f.fact)}</p>`;
     }
@@ -165,7 +166,7 @@
 
   /* ---------------------------------------------------------------- wildlife tabs */
   function renderWildlife() {
-    const card = (o) => `<article class="wcard glass rv" data-w="${o.id || ""}" data-tilt>${o.level ? `<span class="chip first">Lv ${o.level}</span>` : ""}<div class="pic">${o.emoji ? `<span class="emoji">${o.emoji}</span>` : `<img src="${src(o.img)}" alt="${esc(o.name)}" loading="lazy">`}</div>
+    const card = (o) => `<article class="wcard glass rv" data-w="${o.id || ""}" data-tilt>${o.level ? `<span class="chip first">Lv ${o.level}</span>` : ""}<div class="pic">${o.emoji ? `<span class="emoji">${ic(o.emoji)}</span>` : `<img src="${src(o.img)}" alt="${esc(o.name)}" loading="lazy">`}</div>
       <h4>${esc(o.name)}</h4>${o.tag ? `<div class="tagline">${esc(o.tag)}</div>` : ""}<p>${esc(o.fact)}</p></article>`;
     $("#c-fish").innerHTML = D.enemies.map((e) => card({ ...e, tag: `Size ${e.size}` })).join("");
     $("#c-marine").innerHTML = D.marine.map((m) => card({ ...m, tag: m.role + " · " + m.tag })).join("");
@@ -185,7 +186,7 @@
   function renderBosses() {
     $("#boss-list").innerHTML = D.bosses.map((b, i) => `<article class="boss glass rv" id="boss-${b.id}">
       <div class="bossart" ${b.img2 ? 'data-swap="1" role="button" tabindex="0" aria-label="Switch Swarm Queen phase"' : ""}><img src="${src(b.img)}" alt="${esc(b.name)}" loading="lazy">${b.img2 ? '<span class="hint">Tap to switch phase</span>' : ""}</div>
-      <div><span class="bosstag">⚔ ${esc(b.title)} · Level ${b.level}</span><h3 style="font-size:clamp(2rem,4vw,3rem);margin-top:.3em">${esc(b.name)}</h3><p style="color:var(--mist)">${esc(b.fact)}</p>
+      <div><span class="bosstag">${ic("swords")} ${esc(b.title)} · Level ${b.level}</span><h3 style="font-size:clamp(2rem,4vw,3rem);margin-top:.3em">${esc(b.name)}</h3><p style="color:var(--mist)">${esc(b.fact)}</p>
         <ul class="moves">${b.moves.map((m) => `<li>${esc(m)}</li>`).join("")}</ul><p style="margin:16px 0 0"><a class="btn ghost" href="#level-${b.level}" data-open="${b.level}" style="padding:.65em 1.3em;font-size:.9rem">See Level ${b.level}</a></p></div></article>`).join("");
     const q = D.bosses.find((b) => b.img2);
     $$("[data-swap]").forEach((el) => {
@@ -204,8 +205,8 @@
     $("#dots").innerHTML = L.map((l) => `<button class="dot" type="button" style="--tc:${TYPE[l.type].color}" data-lv="${l.n}" ${l.type === "boss" ? 'data-boss="1"' : ""} title="Level ${l.n} - ${esc(l.name)}" aria-label="Level ${l.n}: ${esc(l.name)}">${l.n}</button>`).join("");
     const groups = [["all", "All 31"], ["eat", "Eat & grow"], ["pool", "Feeding pools"], ["timed", "Timed trials"], ["hunt", "Hunts"], ["survival", "Survival"], ["boss", "Bosses"], ["maze", "Maze"]];
     $("#filters").innerHTML = groups.map(([k, n]) => `<button class="filter" type="button" data-f="${k}" aria-pressed="${k === "all"}">${n}</button>`).join("");
-    $("#levels").innerHTML = L.map((l) => `<button class="lcard ${l.type === "boss" ? "boss" : ""} rv" type="button" data-lv="${l.n}" data-t="${l.type}" style="--tc:${TYPE[l.type].color}">
-      <div class="thumb"><img src="${IMG}bg/bg${String(l.bg).padStart(2, "0")}.webp" alt="" loading="lazy" width="480" height="270"><span class="no">${l.n}</span><span class="chip tag" style="background:rgba(2,16,31,.7)">${TYPE[l.type].label}</span></div>
+    $("#levels").innerHTML = L.map((l) => `<button class="lcard ${l.type === "boss" ? "isboss" : ""} rv" type="button" data-lv="${l.n}" data-t="${l.type}" style="--tc:${TYPE[l.type].color}">
+      <div class="thumb"><img src="${IMG}bg/bg${String(l.bg).padStart(2, "0")}.webp" alt="" loading="lazy" width="480" height="270">${l.boss && D.bosses.find((b) => b.id === l.boss) ? `<img class="bossthumb" src="${src(D.bosses.find((b) => b.id === l.boss).img)}" alt="" loading="lazy">` : ""}<span class="no">${l.n}</span><span class="chip tag" style="background:rgba(2,16,31,.7)">${TYPE[l.type].label}</span></div>
       <div class="body"><h3>${esc(l.name)}</h3><p>${esc(l.blurb)}</p></div></button>`).join("");
     $("#filters").addEventListener("click", (e) => {
       const b = e.target.closest(".filter"); if (!b) return; curFilter = b.dataset.f;
@@ -222,13 +223,13 @@
   function openLevel(n, push = true) {
     n = clamp(n, 1, D.levels.length); curLevel = n;
     const l = D.levels[n - 1], tc = TYPE[l.type], boss = l.boss && D.bosses.find((b) => b.id === l.boss);
-    mdl.innerHTML = `<button class="xbtn" type="button" aria-label="Close" id="mx">✕</button>
+    mdl.innerHTML = `<button class="xbtn" type="button" aria-label="Close" id="mx">${ic("x")}</button>
       <div class="art" style="background-image:url(${IMG}bg/bg${String(l.bg).padStart(2, "0")}.webp)"><span class="big">${n}</span>${boss ? `<img class="bossimg" src="${src(boss.img)}" alt="">` : ""}</div>
       <div class="txt"><div><span class="chip" style="background:${tc.color};color:#021;border-color:transparent">${tc.label}</span> <span class="chip">Chapter 1 · The Shallows</span></div>
         <h3 id="mtitle">${esc(l.name)}</h3><p style="margin:0">${esc(l.blurb)}</p>
         ${l.new.length ? `<div><b style="color:var(--sun)">New in this level</b><ul style="margin-top:8px">${l.new.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}
         ${l.tip ? `<div class="tip">${esc(l.tip)}</div>` : ""}
-        <div class="mnav"><button class="btn ghost" type="button" id="mp" ${n === 1 ? "disabled" : ""}>← Level ${Math.max(1, n - 1)}</button><button class="btn" type="button" id="mn" ${n === D.levels.length ? "disabled" : ""}>Level ${Math.min(D.levels.length, n + 1)} →</button></div></div>`;
+        <div class="mnav"><button class="btn ghost" type="button" id="mp" ${n === 1 ? "disabled" : ""}>${ic("left")} Level ${Math.max(1, n - 1)}</button><button class="btn" type="button" id="mn" ${n === D.levels.length ? "disabled" : ""}>Level ${Math.min(D.levels.length, n + 1)} ${ic("right")}</button></div></div>`;
     modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden";
     $("#mx").focus();
     if (push) history.replaceState(null, "", "#level-" + n);
@@ -280,7 +281,7 @@
       deadline = performance.now() + 3000;
       if (!active) { active = true; loop(); }
       paint(true);
-      if (done) { burst(); hint.textContent = tier === tiers.length - 1 ? "🔊 ABYSSAL FEAST!  Keep biting - it spells itself again." : `✔ ${tiers[tier]}! Keep going...`; screen.animate([{ filter: "brightness(1.6)" }, { filter: "none" }], 400); }
+      if (done) { burst(); hint.textContent = tier === tiers.length - 1 ? "ABYSSAL FEAST!  Keep biting - it spells itself again." : `${tiers[tier]}! Keep going...`; screen.animate([{ filter: "brightness(1.6)" }, { filter: "none" }], 400); }
       else hint.textContent = "Keep biting - 3 seconds on the clock!";
     });
   }
@@ -375,7 +376,16 @@
     m.addEventListener("click", (e) => { if (e.target.closest("a")) { m.classList.remove("open"); b.setAttribute("aria-expanded", "false"); } });
   }
 
+  /* click feedback: button ripple + a little bubble burst anywhere you tap */
+  if (!reduce) {
+    document.addEventListener("pointerdown", (e) => {
+      const b = e.target.closest(".btn:not([aria-disabled])");
+      if (b) { const r = b.getBoundingClientRect(), d = Math.max(r.width, r.height), s = document.createElement("span"); s.className = "ripple"; s.style.cssText = `width:${d}px;height:${d}px;left:${e.clientX - r.left - d / 2}px;top:${e.clientY - r.top - d / 2}px`; b.appendChild(s); setTimeout(() => s.remove(), 650); }
+      for (let i = 0; i < 5; i++) { const el = document.createElement("i"); el.className = "click-bubble"; const a = -Math.PI / 2 + (Math.random() - 0.5) * 2.2, dist = 30 + Math.random() * 50; el.style.cssText = `left:${e.clientX}px;top:${e.clientY}px;--x:${Math.cos(a) * dist}px;--y:${Math.sin(a) * dist}px;width:${6 + Math.random() * 10}px;height:${6 + Math.random() * 10}px`; document.body.appendChild(el); setTimeout(() => el.remove(), 1000); }
+    });
+  }
   /* ---------------------------------------------------------------- boot */
+  $$("[data-ic]").forEach((el) => el.insertAdjacentHTML("afterbegin", ic(el.dataset.ic)));
   renderStats(); renderSteps(); renderFeatures(); renderModes(); renderRooms(); renderAccessories(); renderFaq(); renderChapters(); renderCTA();
   renderFish(); renderLadder(); renderWildlife(); renderBosses(); renderLevels(); renderGallery(); streakDemo(); nav(); scrollFX();
   swimmers(); particles(); hydrateSprites(); reveal(); tilt();

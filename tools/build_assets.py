@@ -111,7 +111,7 @@ turn = Image.open(GAME / "Resources/Resources/Player/1. Coral Reef/Clown fish/cl
 cw, ch = turn.width // 4, turn.height // 3
 clown = bbox_crop(turn.crop((0, 0, cw, ch)), 8)
 rec("fish/clownfish", save(fit_width(clown, 520), out("fish", "clownfish.webp"), 88))
-dart = Image.open(GAME / "Resources/Resources/Player/1. Coral Reef/Decorated Dartfish/7c92655b-63f3-4f09-81c4-ddc408aec65e.png").convert("RGBA")
+dart = Image.open(GAME / "Resources/Resources/Player/1. Coral Reef/Decorated Dartfish/dartfish_swim_0.png").convert("RGBA")
 rec("fish/dartfish", save(fit_width(bbox_crop(dart, 8), 520), out("fish", "dartfish.webp"), 86))
 
 # secret golden fish: silhouette teaser only (it is a redeem-code fish)
