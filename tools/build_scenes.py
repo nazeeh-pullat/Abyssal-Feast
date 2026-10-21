@@ -93,12 +93,12 @@ tang = frame0(PLAYER / "YellowTang/Anim/yellow_tang_swim.png")
 icon = lambda n: bbox_crop(Image.open(WIKI / n).convert("RGBA"), 2)
 
 
-def boss_frame(p):
+def boss_frame(p, cell):
     sh = Image.open(p).convert("RGBA")
-    return bbox_crop(sh.crop((0, 0, sh.width // 4, sh.width // 4)), 8)
+    return bbox_crop(sh.crop((0, 0, cell, cell)), 8)
 
 
-mantis, queen = boss_frame(BOSS / "MantisShrimp/mantis_idle.png"), boss_frame(BOSS / "SwarmQueen/queen_idle.png")
+mantis, queen = boss_frame(BOSS / "MantisShrimp/mantis_idle.png", 768), boss_frame(BOSS / "SwarmQueen/queen_idle.png", 640)
 
 # 1 - First Bites
 c = bg("Level_1")
@@ -138,14 +138,14 @@ place(c, clown, 330, 250, 230, rot=14)
 bubbles(c, 35)
 finish(c, "s4-mantis")
 
-# 5 - Swarm queen
+# 5 - Starfish King and his baby starfish
 c = bg("Level_3")
 place(c, queen, 900, 440, 560)
 for x, y, w, r in [(520, 520, 110, 20), (400, 330, 96, -25), (560, 250, 90, 35), (640, 600, 120, -10)]:
     place(c, icon("Marine_SwarmLarva.png"), x, y, w, rot=r)
 place(c, clown, 250, 420, 220)
 bubbles(c, 40)
-finish(c, "s5-swarm-queen")
+finish(c, "s5-starfish-king")
 
 # 6 - Predators / food chain
 c = bg("Level_9")
@@ -164,17 +164,17 @@ m = m.resize((round(m.width * s), round(m.height * s)), Image.LANCZOS)
 c = m.crop(((m.width - W) // 2, (m.height - H) // 2, (m.width - W) // 2 + W, (m.height - H) // 2 + H)).convert("RGBA")
 d = ImageDraw.Draw(c, "RGBA")
 pts = []
-for i in range(31):
-    t = i / 30
+for i in range(35):
+    t = i / 34
     x = 70 + t * (W - 140)
     y = H * 0.5 + math.sin(t * math.pi * 2.6) * H * 0.26 + math.sin(t * 9) * 14
     pts.append((x, y))
 for a, b in zip(pts, pts[1:]):
     d.line([a, b], fill=(255, 255, 255, 120), width=6)
 for i, (x, y) in enumerate(pts, 1):
-    boss = i in (27, 30)
+    boss = i in (31, 34)
     r = 21 if boss else 16
-    col = (255, 93, 93) if boss else (255, 209, 102) if i <= 12 else (94, 234, 212)
+    col = (255, 93, 93) if boss else (255, 209, 102) if i <= 13 else (94, 234, 212)
     d.ellipse((x - r - 4, y - r - 4, x + r + 4, y + r + 4), fill=(0, 20, 40, 130))
     d.ellipse((x - r, y - r, x + r, y + r), fill=col + (255,), outline=(255, 255, 255, 255), width=3)
 finish(c, "s7-map", strength=.25)

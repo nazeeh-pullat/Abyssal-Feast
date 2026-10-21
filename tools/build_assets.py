@@ -142,12 +142,19 @@ rec("sheet/clownfish", save(cs, out("sheets", "clownfish.webp"), 80))
 
 # ---------------------------------------------------------------- bosses
 BOSS = GAME / "Assets/Art/Bosses/Chapter1"
-for key, path in {"mantis-shrimp": BOSS / "MantisShrimp/mantis_idle.png", "swarm-queen": BOSS / "SwarmQueen/queen_idle.png",
-                  "swarm-queen-smooth": BOSS / "SwarmQueen/queen_smooth_idle.png"}.items():
+
+
+def first_cell(path, cell):
+    """frame 0 of a boss sprite sheet (the cell size is that boss's: Mantis 768 px, Starfish King 640 px)."""
     sh = Image.open(path).convert("RGBA")
-    cell = sh.width // 4
-    f = bbox_crop(sh.crop((0, 0, cell, cell)), 10)
+    return sh.crop((0, 0, cell, cell))
+
+
+for key, path, cell in (("mantis-shrimp", BOSS / "MantisShrimp/mantis_idle.png", 768), ("starfish-king", BOSS / "SwarmQueen/queen_idle.png", 640),
+                        ("starfish-king-bare", BOSS / "SwarmQueen/queen_smooth_idle.png", 640)):
+    f = bbox_crop(first_cell(path, cell), 10)
     rec(f"boss/{key}", save(fit_width(f, 720), out("boss", f"{key}.webp"), 86))
+king = bbox_crop(first_cell(BOSS / "SwarmQueen/queen_idle.png", 640), 8)
 
 # ---------------------------------------------------------------- wiki icons (marine life, powerups, perks, currency)
 WIKI = GAME / "Assets/Art/Wiki"
@@ -185,8 +192,8 @@ lg = fit_width(logo, 640)
 og.alpha_composite(lg, ((W - lg.width) // 2, 70))
 f1 = fit_width(clown, 220)
 og.alpha_composite(f1, (150, 400))
-f2 = fit_width(bbox_crop(frame0(STATIC["lionfish"]), 8), 260)
-og.alpha_composite(f2, (790, 380))
+f2 = fit_width(king, 340)                                  # the Starfish King, the new Chapter 1 boss
+og.alpha_composite(f2, (800, 290))
 f3 = fit_width(bbox_crop(frame0(STATIC["blue-tang"]), 8), 200)
 og.alpha_composite(f3, (460, 440))
 og.convert("RGB").save(out("og.jpg"), quality=88, optimize=True)

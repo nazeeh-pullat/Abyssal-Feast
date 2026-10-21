@@ -190,7 +190,7 @@
   /* ---------------------------------------------------------------- bosses */
   function renderBosses() {
     $("#boss-list").innerHTML = D.bosses.map((b, i) => `<article class="boss glass rv" id="boss-${b.id}">
-      <div class="bossart" ${b.img2 ? 'data-swap="1" role="button" tabindex="0" aria-label="Switch Swarm Queen phase"' : ""}><img src="${src(b.img)}" alt="${esc(b.name)}" loading="lazy">${b.img2 ? '<span class="hint">Tap to switch phase</span>' : ""}</div>
+      <div class="bossart" ${b.img2 ? 'data-swap="1" role="button" tabindex="0" aria-label="Switch Starfish King phase"' : ""}><img src="${src(b.img)}" alt="${esc(b.name)}" loading="lazy">${b.img2 ? '<span class="hint">Tap to switch phase</span>' : ""}</div>
       <div><span class="bosstag">${ic("swords")} ${esc(b.title)} · Level ${b.level}</span><h3 style="font-size:clamp(2rem,4vw,3rem);margin-top:.3em">${esc(b.name)}</h3><p style="color:var(--mist)">${esc(b.fact)}</p>
         <ul class="moves">${b.moves.map((m) => `<li>${esc(m)}</li>`).join("")}</ul><p style="margin:16px 0 0"><a class="btn ghost" href="#level-${b.level}" data-open="${b.level}" style="padding:.65em 1.3em;font-size:.9rem">See Level ${b.level}</a></p></div></article>`).join("");
     const q = D.bosses.find((b) => b.img2);

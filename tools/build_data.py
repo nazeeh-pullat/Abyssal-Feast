@@ -68,8 +68,8 @@ ENEMIES = [
     en("lionfish", "Lionfish", "lionfish", 3, 3, True),
     en("clown-triggerfish", "Clown Triggerfish", "clown-triggerfish", 3, 1),
     en("picasso", "Picasso Triggerfish", "picasso", 3, 2),
-    en("hogfish", "Hogfish", "hogfish", 4, 11),
-    en("parrotfish", "Bleeker's Parrotfish", "parrotfish", 4, 12),
+    en("hogfish", "Hogfish", "hogfish", 4, 12),
+    en("parrotfish", "Bleeker's Parrotfish", "parrotfish", 4, 13),
 ]
 for e in ENEMIES:
     if e["name"] == "Bangaii Cardinalfish":
@@ -80,27 +80,28 @@ MARINE = [
     dict(id="hermit-crab", name="Hermit Crab", img="icons/marine_hermitcrab", level=7, role="Free snack", fact=fact("Hermit Crab"), tag="Eat it for bonus shells"),
     dict(id="starfish", name="Starfish", img="icons/marine_starfish", level=7, role="Free snack", fact=fact("Starfish"), tag="A free snack that may carry shells"),
     dict(id="sea-anemone", name="Sea Anemone", img="icons/marine_seaanemone", level=9, role="Hazard", fact=fact("Sea Anemone"), tag="Stings everyone except Clownfish"),
-    dict(id="sea-urchin", name="Sea Urchin", img="icons/marine_seaurchin", level=15, role="Hazard", fact=fact("Sea Urchin"), tag="Smash it once you are big enough"),
-    dict(id="giant-clam", name="Giant Clam", img="icons/marine_giantclam", level=18, role="Risk and reward", fact=fact("Giant Clam"), tag="Hides Black Pearls - watch for the shake"),
-    dict(id="swarm-larva", name="Swarm Larva", img="icons/marine_swarmlarva", level=30, role="Boss minion", fact=fact("Swarm Larva"), tag="Hunts in packs around the Queen"),
+    dict(id="sea-urchin", name="Sea Urchin", img="icons/marine_seaurchin", level=16, role="Hazard", fact=fact("Sea Urchin"), tag="Smash it once you are big enough"),
+    dict(id="giant-clam", name="Giant Clam", img="icons/marine_giantclam", level=20, role="Risk and reward", fact=fact("Giant Clam"), tag="Hides Black Pearls - watch for the shake"),
+    dict(id="baby-starfish", name="Baby Starfish", img="icons/marine_swarmlarva", level=34, role="Boss minion", fact=fact("Baby Starfish"), tag="Hunts in packs around the Starfish King - eat them for shells"),
 ]
 
 BOSSES = [
-    dict(id="mantis", name="Peacock Mantis Shrimp", title="Miniboss", level=27, img="boss/mantis-shrimp", biome="The Sandy Seabed",
+    dict(id="mantis", name="Peacock Mantis Shrimp", title="Miniboss", level=31, img="boss/mantis-shrimp", biome="The Sandy Seabed",
          fact=fact("Mantis Shrimp (Miniboss)"),
          moves=["Hops out of its burrow, patrols the floor and telegraphs every jump with a red landing circle", "A jump that misses you three times in a row cracks its shell - bite the glowing weak spot",
                 "Every hit makes it faster and more alert", "Dives into the sand and bursts out right under you - keep moving"]),
-    dict(id="queen", name="The Swarm Queen", title="Boss", level=30, img="boss/swarm-queen", img2="boss/swarm-queen-smooth", biome="The Shallows reef",
-         fact=fact("Crown-of-Thorns Starfish (Boss)"),
-         moves=["Phase 1 - SPIKY: dodge her volleys, rings, falling thorns and sweeping beams while larvae creep out from under her",
-                "Phase 2 - SMOOTH: her spikes burst off and she is harmless to touch - bite her six arms one at a time, following the red rings",
-                "Then only her head is left - but her spikes grow back, so stay sharp", "Eat larvae for a breather, and never sit still"]),
+    dict(id="queen", name="The Starfish King", title="Boss", level=34, img="boss/starfish-king", img2="boss/starfish-king-bare", biome="The Shallows reef",
+         fact=fact("Starfish King (Boss)"),
+         moves=["Phase 1 - ARMORED: dodge his volleys, rings, falling spikes, fast needles, wobbling zigzags, spikes that split apart and boomerangs - he never sits still, and baby starfish creep out from under him",
+                "Phase 2 - BARE: his armor bursts off and he is harmless to touch - bite his five arms one at a time, following the red rings",
+                "Then only his head is left - but his armor grows back, so stay sharp",
+                "Eat his baby starfish for shells - and when he falls he blasts out a shower of shells to collect"]),
 ]
 
 EVENTS = [
-    dict(name="Tidal Current", level=21, icon="waves", fact=fact("Tidal Current"), tag="Gentle current drifts every fish one way"),
-    dict(name="Rip Current", level=23, icon="swirl", fact=fact("Passing Current (Rip Current)"), tag="A fast band of water shoves you along"),
-    dict(name="School Rush", level=25, icon="school", fact=fact("School Rush"), tag="Bite the calm front for a bonus"),
+    dict(name="Tidal Current", level=24, icon="waves", fact=fact("Tidal Current"), tag="Gentle current drifts every fish one way"),
+    dict(name="Rip Current", level=26, icon="swirl", fact=fact("Passing Current (Rip Current)"), tag="A fast band of water shoves you along"),
+    dict(name="School Rush", level=29, icon="school", fact=fact("School Rush"), tag="Bite the calm front for a bonus"),
     dict(name="Drifting Debris", level=1, icon="log", fact=fact("Drifting Debris"), tag="Junk tumbles through the water"),
 ]
 
@@ -122,7 +123,7 @@ PERKS = [
     dict(name="Starting Shield", img="icons/perk_startingshield", text="Invincible for the first 10 seconds of the level."),
 ]
 
-# ------------------------------------------------------------------ the 31 levels of Chapter 1
+# ------------------------------------------------------------------ the 35 levels of Chapter 1
 # type: eat | pool | timed | hunt | survival | boss | maze
 L = []
 
@@ -136,7 +137,7 @@ def lv(n, name, typ, bg, blurb, new=None, tip=None, extra=None):
 
 lv(1, "First Bites", "eat", 1, "Your first swim in the Shallows. Learn the basics: swim, eat fish smaller than you, grow through 3 size stages and fill the bar to win. A short cutscene and on-screen hints walk you through it - everyone starts as a Clownfish.",
    ["Swimming and eating", "Hearts and the ability button", "Feast Streak combos"], "Fish bigger than you will eat you. Eat the small ones first!")
-lv(2, "Into the Reef", "eat", 2, "The reef gets busier - and not every little fish is harmless. Meet the Pufferfish: when you get close it puffs into a spiky ball that bounces everyone away and cannot be eaten. Wait for it to deflate, then bite!",
+lv(2, "Meet the Pufferfish", "eat", 2, "The reef gets busier - and not every little fish is harmless. Meet the Pufferfish: when you get close it puffs into a spiky ball that bounces everyone away and cannot be eaten. Wait for it to deflate, then bite!",
    ["Pufferfish enemy"], "Keep your distance from puffed-up pufferfish.")
 lv(3, "Powerups", "eat", 3, "Floating bubbles hold powerups: Speed Boost, Shield, Slow World, Growth Point, Extra Heart and piles of shells. Swim into one to grab it - its timer shows on your HUD. Watch out for the one bad bubble.",
    ["Powerup bubbles", "The Poison Bubble"], "Save Slow World for a crowded screen.")
@@ -151,45 +152,49 @@ lv(8, "Feeding Pool 2", "pool", 4, "Another pool full of the tiniest fish. Eat 1
 lv(9, "Anemone Alley", "eat", 8, "Sea anemones sting everyone but Clownfish: anyone else gets hurt and slowed. Steer clear - or play as the Clownfish, who is immune.",
    ["Sea Anemone"], "Only clownfish are safe inside an anemone.")
 lv(10, "Big Appetite", "eat", 9, "Bigger crowds, bigger bites. Fill the growth bar through four size stages.")
-lv(11, "Giant Prey", "eat", 10, "The first level with a fourth prey size: the Hogfish joins the menu - a big meal for a grown fish, and a real danger to anything smaller.",
+lv(11, "Reef Wanderers", "eat", 7, "A calmer swim through the reef: three prey sizes, hermit crabs on the sea floor and a school of fish that never seems to run out. A short breather before the giants arrive.")
+lv(12, "Giant Prey", "eat", 10, "The first level with a fourth prey size: the Hogfish joins the menu - a big meal for a grown fish, and a real danger to anything smaller.",
    ["4th prey size - Hogfish"])
-lv(12, "Hunt the Mandarinfish", "hunt", 11, "Hunt levels give you one target. Eat the smaller fish to grow to full size - then catch the one Mandarinfish. Other fish do not count toward the goal!",
+lv(13, "Hunt the Mandarinfish", "hunt", 11, "Hunt levels give you one target. Eat the smaller fish to grow to full size - then catch the one Mandarinfish. Other fish do not count toward the goal!",
    ["Hunt levels"], "Eat the smaller fish to grow to full size - then catch the one Mandarinfish.")
-lv(13, "Open Ocean", "eat", 6, "More open water and faster fish. Keep moving and keep chaining bites.")
-lv(14, "Timed Trial 2", "timed", 5, "Another shell-grabbing race, now with 75 seconds on the clock.", [], "Survive until the timer runs out - grab the shell bubbles for bonus shells!")
-lv(15, "Spiky Waters", "eat", 10, "Sea urchins just sit there with hundreds of spines - touching them hurts. Grow big enough and you can smash them instead.",
+lv(14, "Open Ocean", "eat", 6, "More open water and faster fish. Keep moving and keep chaining bites.")
+lv(15, "Timed Trial 2", "timed", 5, "Another shell-grabbing race, now with 75 seconds on the clock.", [], "Survive until the timer runs out - grab the shell bubbles for bonus shells!")
+lv(16, "Spiky Waters", "eat", 10, "Sea urchins just sit there with hundreds of spines - touching them hurts. Grow big enough and you can smash them instead.",
    ["Sea Urchin"], "Touching its spikes hurts. Grow big enough and you can smash it!")
-lv(16, "Drifting Tides", "eat", 9, "Wide-open reef and big schools. Eat your way through four size stages without losing your hearts.")
-lv(17, "Hunt the Moorefish", "hunt", 11, "Reach full size by eating smaller fish, then catch the one Moorish Idol. Only the target counts.", [], "Eat the smaller fish to grow to full size - then catch the one Moorefish.")
-lv(18, "Giant Clam", "eat", 7, "Risk versus reward: a giant clam opens to show a reward (Black Pearls!), but if it snaps shut while you are inside, it is over. Watch for the shake!",
+lv(17, "Urchin Drift", "eat", 10, "Spiky urchins drift past in the busy reef water, with anemones close by. Pick your path carefully - and take the big prey while it lasts.")
+lv(18, "Drifting Tides", "eat", 9, "Wide-open reef and big schools. Eat your way through four size stages without losing your hearts.")
+lv(19, "Hunt the Moorefish", "hunt", 11, "Reach full size by eating smaller fish, then catch the one Moorish Idol. Only the target counts.", [], "Eat the smaller fish to grow to full size - then catch the one Moorefish.")
+lv(20, "Giant Clam", "eat", 7, "Risk versus reward: a giant clam opens to show a reward (Black Pearls!), but if it snaps shut while you are inside, it is over. Watch for the shake!",
    ["Giant Clam"])
-lv(19, "Poison Fish", "eat", 3, "Not every glowing snack is a good idea. Poison fish are slow and green-tinted - and eating one flips your controls for a few seconds!",
+lv(21, "Poison Fish", "eat", 3, "Not every glowing snack is a good idea. Poison fish are slow and green-tinted - and eating one flips your controls for a few seconds!",
    ["Poison Fish"])
-lv(20, "Feast Frenzy", "eat", 2, "A feeding frenzy: the more you bite in a row, the higher your Feast Streak climbs. How far can you spell it?")
-lv(21, "Riptide Run", "survival", 5, "The water itself starts to move. Every so often a gentle tidal current pushes you and every fish along - drifting bubbles show which way it flows. Survive until the timer runs out.",
+lv(22, "Clam Cove", "eat", 7, "A cove where giant clams, sea urchins and anemones all share the water. Know which one is a danger and which one pays out pearls.")
+lv(23, "Feast Frenzy", "eat", 2, "A feeding frenzy: the more you bite in a row, the higher your Feast Streak climbs. How far can you spell it?")
+lv(24, "Riptide Run", "survival", 5, "The water itself starts to move. Every so often a gentle tidal current pushes you and every fish along - drifting bubbles show which way it flows. Survive until the timer runs out.",
    ["Tidal Currents"], "Ride out the riptide! Survive until the timer runs out.")
-lv(22, "Hungry Reef", "eat", 6, "The reef is packed with hungry predators. Stay one size ahead of them.")
-lv(23, "Riptide Run 2", "survival", 5, "The sea gets wilder. Rip currents are fast bands of water that sweep across the level and shove you along - swim out of their way and survive the timer.",
+lv(25, "Hungry Reef", "eat", 6, "The reef is packed with hungry predators. Stay one size ahead of them.")
+lv(26, "Riptide Run 2", "survival", 5, "The sea gets wilder. Rip currents are fast bands of water that sweep across the level and shove you along - swim out of their way and survive the timer.",
    ["Rip Currents"], "Ride out the riptide! Survive until the timer runs out.")
-lv(24, "Fish Fiesta", "eat", 9, "A party of prey. Plenty to eat - and plenty of things that want to eat you.")
-lv(25, "School Rush", "eat", 2, "A stampede of fish! A huge school bursts across the screen and stirs up the water. Stay clear of its wake, then bite the calm front for a bonus - eat the whole school for a 100-shell School Bonus.",
+lv(27, "Tidal Rush", "eat", 9, "Strong tides pull everything sideways while you feed. Use the current to catch fleeing fish - and to escape the big ones.")
+lv(28, "Fish Fiesta", "eat", 9, "A party of prey. Plenty to eat - and plenty of things that want to eat you.")
+lv(29, "School Rush", "eat", 2, "A stampede of fish! A huge school bursts across the screen and stirs up the water. Stay clear of its wake, then bite the calm front for a bonus - eat the whole school for a 100-shell School Bonus.",
    ["School Rush event"])
-lv(26, "Feeding Pool 3", "pool", 4, "The last Feeding Pool: 150 tiny fish stand between you and the boss.", [], "Only the tiniest fish live here - eat 150 of them to win!")
-lv(27, "The Mantis Shrimp", "boss", 1, "Your first real fight. The peacock mantis shrimp leaps from its burrow - stay out of the red circle. When it misses you enough times its shell cracks, so bite the glowing weak spot!",
+lv(30, "Feeding Pool 3", "pool", 4, "The last Feeding Pool: 150 tiny fish stand between you and the boss.", [], "Only the tiniest fish live here - eat 150 of them to win!")
+lv(31, "The Mantis Shrimp", "boss", 1, "Your first real fight. The peacock mantis shrimp leaps from its burrow - stay out of the red circle. When it misses you enough times its shell cracks, so bite the glowing weak spot!",
    ["Miniboss fight"], "Stay out of the red circle. After it misses you 3 times the shell cracks - bite the weak spot!", dict(boss="mantis", title="Miniboss"))
-lv(28, "Timed Trial 3", "timed", 5, "The final shell race of the chapter: 75 seconds, as many shells as you can grab.", [], "Survive until the timer runs out - grab the shell bubbles for bonus shells!")
-lv(29, "Last Feast", "eat", 6, "The last regular level of the Shallows. Everything you have learned, all at once.")
-lv(30, "The Swarm Queen", "boss", 3, "The ruler of the Shallows reef. She throws her spikes - dodge them! When she runs out she turns smooth: bite her arms one by one (follow the red rings), then her head.",
-   ["Boss fight", "Two-phase Queen"], "Dodge her spikes. When she runs out, bite her arms one by one, then her head.", dict(boss="queen", title="Boss"))
-lv(31, "The Maze", "maze", 10, "The last stretch of the Shallows: swim through a winding cave maze to the glowing light at the end to finish the chapter - and open the way to the Kelp Forest.",
+lv(32, "Timed Trial 3", "timed", 5, "The final shell race of the chapter: 75 seconds, as many shells as you can grab.", [], "Survive until the timer runs out - grab the shell bubbles for bonus shells!")
+lv(33, "Last Feast", "eat", 6, "The last regular level of the Shallows. Everything you have learned, all at once.")
+lv(34, "The Starfish King", "boss", 3, "The armored ruler of the Shallows reef. He throws every kind of spike - dodge them! When his armor bursts off, bite his arms one by one (follow the red rings), then his head. Baby starfish bring you shells.",
+   ["Boss fight", "Two-phase Starfish King"], "Dodge his spikes. When his armor bursts off, bite his arms one by one, then his head.", dict(boss="queen", title="Boss"))
+lv(35, "The Maze", "maze", 10, "The last stretch of the Shallows: swim through a winding cave maze to the glowing light at the end to finish the chapter - and open the way to the Kelp Forest.",
    ["Cave maze finale", "Chapter 2 cutscene"], "Enter the cave on the left and find your way through the maze to the light.")
 
 # ------------------------------------------------------------------ the rest of the site content
 FEATURES = [
     dict(icon="fish", title="Eat. Grow. Survive.", text="Swim with one thumb, chomp fish smaller than you and grow through size stages - but anything bigger is hunting you."),
     dict(icon="star", title="5 playable fish", text="Clownfish, Dartfish, Pufferfish, Royal Gramma and Yellow Tang - each with its own special ability, speed and hearts."),
-    dict(icon="map", title="31 levels in Chapter 1", text="Eating races, timed shell runs, hunts, riptide survival, a maze finale - and every level introduces something new."),
-    dict(icon="swords", title="Real boss fights", text="Dodge the Peacock Mantis Shrimp's leaps and take on the two-phase Swarm Queen with her spikes, larvae and weak points."),
+    dict(icon="map", title="35 levels in Chapter 1", text="Eating races, timed shell runs, hunts, riptide survival, a maze finale - and every level introduces something new."),
+    dict(icon="swords", title="Real boss fights", text="Dodge the Peacock Mantis Shrimp's leaps and take on the two-phase Starfish King with his spikes, baby starfish and weak points."),
     dict(icon="waves", title="A living ocean", text="Tidal currents, rip currents, school stampedes, drifting debris, stinging anemones and snapping giant clams."),
     dict(icon="flame", title="Feast Streak combos", text="Chain bites to spell FEAST, then keep climbing through six more tiers all the way to ABYSSAL FEAST."),
     dict(icon="hat", title="570+ accessories", text="Hats, glasses and necklaces for every fish - from wizard hats and pirate caps to halos and crowns."),
@@ -208,8 +213,8 @@ MODES = [
 ]
 
 CHAPTERS = [
-    dict(n=1, name="The Shallows", status="live", map="map-ch1", text="Warm, sunlit water above the reef. Coral, sand and small fish make it the perfect place to start growing. 31 levels, two bosses and a cave maze finale.",
-         badges=["31 levels", "2 boss fights", "Playable now (in testing)"]),
+    dict(n=1, name="The Shallows", status="live", map="map-ch1", text="Warm, sunlit water above the reef. Coral, sand and small fish make it the perfect place to start growing. 35 levels, two bosses and a cave maze finale.",
+         badges=["35 levels", "2 boss fights", "Playable now (in testing)"]),
     dict(n=2, name="The Kelp Forest", status="soon", map="map-ch2", text="Giant kelp can grow up to half a metre a day, making towering underwater forests full of hiding places. Bigger fish, new dangers and creeping moss are on the way.",
          badges=["Coming soon"]),
     dict(n=3, name="The Open Ocean", status="soon", map="map-ch3", text="Leave the reef behind. Out in the open ocean there is nowhere to hide - vast blue water, fast hunters and fish bigger than anything you have met.", badges=["Coming soon"]),
@@ -229,7 +234,7 @@ FAQ = [
     ("How do I get in touch?", "Email nazeehfazal12@gmail.com - bug reports, ideas and fish suggestions are all welcome."),
 ]
 
-STATS = dict(levels=31, fish=17, accessories=570, achievements=190, chapters=5, bosses=2)
+STATS = dict(levels=35, fish=17, accessories=570, achievements=190, chapters=5, bosses=2)
 
 LADDER = {
     1: "Size 1 - The tiny ones",
@@ -243,7 +248,7 @@ SCENES = [
     dict(src="assets/img/scenes/s2-puffer.webp", caption="Puffed-up pufferfish bounce everyone away"),
     dict(src="assets/img/scenes/s3-anemone-alley.webp", caption="Anemone Alley - only Clownfish are safe"),
     dict(src="assets/img/scenes/s4-mantis.webp", caption="Miniboss: the Peacock Mantis Shrimp"),
-    dict(src="assets/img/scenes/s5-swarm-queen.webp", caption="Boss: the Swarm Queen and her larvae"),
+    dict(src="assets/img/scenes/s5-starfish-king.webp", caption="Boss: the Starfish King and his baby starfish"),
     dict(src="assets/img/scenes/s6-predators.webp", caption="Hogfish, Lionfish and Parrotfish rule the reef"),
     dict(src="assets/img/scenes/s7-map.webp", caption="Chapter 1 - pick your level on the map"),
 ]

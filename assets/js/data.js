@@ -18,8 +18,8 @@ window.AF_DATA = {
    "caption": "Miniboss: the Peacock Mantis Shrimp"
   },
   {
-   "src": "assets/img/scenes/s5-swarm-queen.webp",
-   "caption": "Boss: the Swarm Queen and her larvae"
+   "src": "assets/img/scenes/s5-starfish-king.webp",
+   "caption": "Boss: the Starfish King and his baby starfish"
   },
   {
    "src": "assets/img/scenes/s6-predators.webp",
@@ -31,7 +31,7 @@ window.AF_DATA = {
   }
  ],
  "stats": {
-  "levels": 31,
+  "levels": 35,
   "fish": 17,
   "accessories": 570,
   "achievements": 190,
@@ -266,7 +266,7 @@ window.AF_DATA = {
    "name": "Hogfish",
    "img": "hogfish",
    "size": 4,
-   "level": 11,
+   "level": 12,
    "fact": "Hogfish use their pig-like snouts to root through the sand for crabs and clams. All hogfish start life as females, and some later become males."
   },
   {
@@ -274,7 +274,7 @@ window.AF_DATA = {
    "name": "Bleeker's Parrotfish",
    "img": "parrotfish",
    "size": 4,
-   "level": 12,
+   "level": 13,
    "fact": "Parrotfish scrape algae off coral with beak-like teeth, and sleep at night inside a bubble of their own mucus."
   }
  ],
@@ -316,7 +316,7 @@ window.AF_DATA = {
    "id": "sea-urchin",
    "name": "Sea Urchin",
    "img": "icons/marine_seaurchin",
-   "level": 15,
+   "level": 16,
    "role": "Hazard",
    "fact": "Sea urchins crawl slowly over the reef, protected by hundreds of sharp spines. Keep your distance, because touching one hurts.",
    "tag": "Smash it once you are big enough"
@@ -325,19 +325,19 @@ window.AF_DATA = {
    "id": "giant-clam",
    "name": "Giant Clam",
    "img": "icons/marine_giantclam",
-   "level": 18,
+   "level": 20,
    "role": "Risk and reward",
    "fact": "Giant clams can grow over a metre wide and live for decades. In the game it opens to show a reward. Grab it before it snaps shut!",
    "tag": "Hides Black Pearls - watch for the shake"
   },
   {
-   "id": "swarm-larva",
-   "name": "Swarm Larva",
+   "id": "baby-starfish",
+   "name": "Baby Starfish",
    "img": "icons/marine_swarmlarva",
-   "level": 30,
+   "level": 34,
    "role": "Boss minion",
-   "fact": "Baby crown-of-thorns starfish drift through the plankton before settling on the reef and growing their first spines. In the game the Queen's larvae creep out from under her and hunt in packs, so keep moving and eat them before they pounce.",
-   "tag": "Hunts in packs around the Queen"
+   "fact": "Young starfish begin life as tiny larvae drifting in the plankton, then settle on the sea floor and grow into small five-armed stars. In the game the Starfish King's babies crawl out from under him and hunt in packs, so keep moving and eat them before they pounce - every one you bite pays out shells.",
+   "tag": "Hunts in packs around the Starfish King - eat them for shells"
   }
  ],
  "bosses": [
@@ -345,7 +345,7 @@ window.AF_DATA = {
    "id": "mantis",
    "name": "Peacock Mantis Shrimp",
    "title": "Miniboss",
-   "level": 27,
+   "level": 31,
    "img": "boss/mantis-shrimp",
    "biome": "The Sandy Seabed",
    "fact": "A peacock mantis shrimp swings its club-like claws so fast that the water boils into tiny shock bubbles, hard enough to crack a snail's shell. It hides in sandy burrows and has some of the most complex eyes in the ocean.",
@@ -358,39 +358,39 @@ window.AF_DATA = {
   },
   {
    "id": "queen",
-   "name": "The Swarm Queen",
+   "name": "The Starfish King",
    "title": "Boss",
-   "level": 30,
-   "img": "boss/swarm-queen",
-   "img2": "boss/swarm-queen-smooth",
+   "level": 34,
+   "img": "boss/starfish-king",
+   "img2": "boss/starfish-king-bare",
    "biome": "The Shallows reef",
-   "fact": "A big coral-eating starfish with up to 21 arms covered in venomous spines. One female can release tens of millions of eggs, and a sudden boom in their numbers can strip a whole reef.",
+   "fact": "Starfish have no brain and no blood: they push seawater through their bodies to move and breathe, and many species can grow back a lost arm. Some even have a tiny eye at the tip of every arm.",
    "moves": [
-    "Phase 1 - SPIKY: dodge her volleys, rings, falling thorns and sweeping beams while larvae creep out from under her",
-    "Phase 2 - SMOOTH: her spikes burst off and she is harmless to touch - bite her six arms one at a time, following the red rings",
-    "Then only her head is left - but her spikes grow back, so stay sharp",
-    "Eat larvae for a breather, and never sit still"
+    "Phase 1 - ARMORED: dodge his volleys, rings, falling spikes, fast needles, wobbling zigzags, spikes that split apart and boomerangs - he never sits still, and baby starfish creep out from under him",
+    "Phase 2 - BARE: his armor bursts off and he is harmless to touch - bite his five arms one at a time, following the red rings",
+    "Then only his head is left - but his armor grows back, so stay sharp",
+    "Eat his baby starfish for shells - and when he falls he blasts out a shower of shells to collect"
    ]
   }
  ],
  "events": [
   {
    "name": "Tidal Current",
-   "level": 21,
+   "level": 24,
    "icon": "waves",
    "fact": "Tides move huge amounts of water in and out of the reef every day, and even a gentle tide carries plankton, fish and divers with it. In the game a calm, level-wide current sets in now and then and drifts you - and every other fish - in one direction. Bubbles show which way it flows.",
    "tag": "Gentle current drifts every fish one way"
   },
   {
    "name": "Rip Current",
-   "level": 23,
+   "level": 26,
    "icon": "swirl",
    "fact": "Rip currents are narrow, fast rivers of water that run out through gaps in the reef and can sweep a swimmer far off course. In the game a band of fast water sweeps across the level: it flings you around, so swim across it instead of fighting it, and be ready to steer again when it passes. Riptide Run levels are full of them.",
    "tag": "A fast band of water shoves you along"
   },
   {
    "name": "School Rush",
-   "level": 25,
+   "level": 29,
    "icon": "school",
    "fact": "Thousands of small fish moving as one confuse predators, which find it hard to pick a single target - and a startled school can burst across the reef in seconds. In the game 10 to 15 small fish suddenly rush across the level; anything in their wake is tossed about, while the front of the school is calm. Eat the whole school for a School Bonus of 100 shells.",
    "tag": "Bite the calm front for a bonus"
@@ -489,7 +489,7 @@ window.AF_DATA = {
   },
   {
    "n": 2,
-   "name": "Into the Reef",
+   "name": "Meet the Pufferfish",
    "type": "eat",
    "bg": 2,
    "blurb": "The reef gets busier - and not every little fish is harmless. Meet the Pufferfish: when you get close it puffs into a spiky ball that bounces everyone away and cannot be eaten. Wait for it to deflate, then bite!",
@@ -585,6 +585,15 @@ window.AF_DATA = {
   },
   {
    "n": 11,
+   "name": "Reef Wanderers",
+   "type": "eat",
+   "bg": 7,
+   "blurb": "A calmer swim through the reef: three prey sizes, hermit crabs on the sea floor and a school of fish that never seems to run out. A short breather before the giants arrive.",
+   "new": [],
+   "tip": ""
+  },
+  {
+   "n": 12,
    "name": "Giant Prey",
    "type": "eat",
    "bg": 10,
@@ -595,7 +604,7 @@ window.AF_DATA = {
    "tip": ""
   },
   {
-   "n": 12,
+   "n": 13,
    "name": "Hunt the Mandarinfish",
    "type": "hunt",
    "bg": 11,
@@ -606,7 +615,7 @@ window.AF_DATA = {
    "tip": "Eat the smaller fish to grow to full size - then catch the one Mandarinfish."
   },
   {
-   "n": 13,
+   "n": 14,
    "name": "Open Ocean",
    "type": "eat",
    "bg": 6,
@@ -615,7 +624,7 @@ window.AF_DATA = {
    "tip": ""
   },
   {
-   "n": 14,
+   "n": 15,
    "name": "Timed Trial 2",
    "type": "timed",
    "bg": 5,
@@ -624,7 +633,7 @@ window.AF_DATA = {
    "tip": "Survive until the timer runs out - grab the shell bubbles for bonus shells!"
   },
   {
-   "n": 15,
+   "n": 16,
    "name": "Spiky Waters",
    "type": "eat",
    "bg": 10,
@@ -635,7 +644,16 @@ window.AF_DATA = {
    "tip": "Touching its spikes hurts. Grow big enough and you can smash it!"
   },
   {
-   "n": 16,
+   "n": 17,
+   "name": "Urchin Drift",
+   "type": "eat",
+   "bg": 10,
+   "blurb": "Spiky urchins drift past in the busy reef water, with anemones close by. Pick your path carefully - and take the big prey while it lasts.",
+   "new": [],
+   "tip": ""
+  },
+  {
+   "n": 18,
    "name": "Drifting Tides",
    "type": "eat",
    "bg": 9,
@@ -644,7 +662,7 @@ window.AF_DATA = {
    "tip": ""
   },
   {
-   "n": 17,
+   "n": 19,
    "name": "Hunt the Moorefish",
    "type": "hunt",
    "bg": 11,
@@ -653,7 +671,7 @@ window.AF_DATA = {
    "tip": "Eat the smaller fish to grow to full size - then catch the one Moorefish."
   },
   {
-   "n": 18,
+   "n": 20,
    "name": "Giant Clam",
    "type": "eat",
    "bg": 7,
@@ -664,7 +682,7 @@ window.AF_DATA = {
    "tip": ""
   },
   {
-   "n": 19,
+   "n": 21,
    "name": "Poison Fish",
    "type": "eat",
    "bg": 3,
@@ -675,7 +693,16 @@ window.AF_DATA = {
    "tip": ""
   },
   {
-   "n": 20,
+   "n": 22,
+   "name": "Clam Cove",
+   "type": "eat",
+   "bg": 7,
+   "blurb": "A cove where giant clams, sea urchins and anemones all share the water. Know which one is a danger and which one pays out pearls.",
+   "new": [],
+   "tip": ""
+  },
+  {
+   "n": 23,
    "name": "Feast Frenzy",
    "type": "eat",
    "bg": 2,
@@ -684,7 +711,7 @@ window.AF_DATA = {
    "tip": ""
   },
   {
-   "n": 21,
+   "n": 24,
    "name": "Riptide Run",
    "type": "survival",
    "bg": 5,
@@ -695,7 +722,7 @@ window.AF_DATA = {
    "tip": "Ride out the riptide! Survive until the timer runs out."
   },
   {
-   "n": 22,
+   "n": 25,
    "name": "Hungry Reef",
    "type": "eat",
    "bg": 6,
@@ -704,7 +731,7 @@ window.AF_DATA = {
    "tip": ""
   },
   {
-   "n": 23,
+   "n": 26,
    "name": "Riptide Run 2",
    "type": "survival",
    "bg": 5,
@@ -715,7 +742,16 @@ window.AF_DATA = {
    "tip": "Ride out the riptide! Survive until the timer runs out."
   },
   {
-   "n": 24,
+   "n": 27,
+   "name": "Tidal Rush",
+   "type": "eat",
+   "bg": 9,
+   "blurb": "Strong tides pull everything sideways while you feed. Use the current to catch fleeing fish - and to escape the big ones.",
+   "new": [],
+   "tip": ""
+  },
+  {
+   "n": 28,
    "name": "Fish Fiesta",
    "type": "eat",
    "bg": 9,
@@ -724,7 +760,7 @@ window.AF_DATA = {
    "tip": ""
   },
   {
-   "n": 25,
+   "n": 29,
    "name": "School Rush",
    "type": "eat",
    "bg": 2,
@@ -735,7 +771,7 @@ window.AF_DATA = {
    "tip": ""
   },
   {
-   "n": 26,
+   "n": 30,
    "name": "Feeding Pool 3",
    "type": "pool",
    "bg": 4,
@@ -744,7 +780,7 @@ window.AF_DATA = {
    "tip": "Only the tiniest fish live here - eat 150 of them to win!"
   },
   {
-   "n": 27,
+   "n": 31,
    "name": "The Mantis Shrimp",
    "type": "boss",
    "bg": 1,
@@ -757,7 +793,7 @@ window.AF_DATA = {
    "title": "Miniboss"
   },
   {
-   "n": 28,
+   "n": 32,
    "name": "Timed Trial 3",
    "type": "timed",
    "bg": 5,
@@ -766,7 +802,7 @@ window.AF_DATA = {
    "tip": "Survive until the timer runs out - grab the shell bubbles for bonus shells!"
   },
   {
-   "n": 29,
+   "n": 33,
    "name": "Last Feast",
    "type": "eat",
    "bg": 6,
@@ -775,21 +811,21 @@ window.AF_DATA = {
    "tip": ""
   },
   {
-   "n": 30,
-   "name": "The Swarm Queen",
+   "n": 34,
+   "name": "The Starfish King",
    "type": "boss",
    "bg": 3,
-   "blurb": "The ruler of the Shallows reef. She throws her spikes - dodge them! When she runs out she turns smooth: bite her arms one by one (follow the red rings), then her head.",
+   "blurb": "The armored ruler of the Shallows reef. He throws every kind of spike - dodge them! When his armor bursts off, bite his arms one by one (follow the red rings), then his head. Baby starfish bring you shells.",
    "new": [
     "Boss fight",
-    "Two-phase Queen"
+    "Two-phase Starfish King"
    ],
-   "tip": "Dodge her spikes. When she runs out, bite her arms one by one, then her head.",
+   "tip": "Dodge his spikes. When his armor bursts off, bite his arms one by one, then his head.",
    "boss": "queen",
    "title": "Boss"
   },
   {
-   "n": 31,
+   "n": 35,
    "name": "The Maze",
    "type": "maze",
    "bg": 10,
@@ -814,13 +850,13 @@ window.AF_DATA = {
   },
   {
    "icon": "map",
-   "title": "31 levels in Chapter 1",
+   "title": "35 levels in Chapter 1",
    "text": "Eating races, timed shell runs, hunts, riptide survival, a maze finale - and every level introduces something new."
   },
   {
    "icon": "swords",
    "title": "Real boss fights",
-   "text": "Dodge the Peacock Mantis Shrimp's leaps and take on the two-phase Swarm Queen with her spikes, larvae and weak points."
+   "text": "Dodge the Peacock Mantis Shrimp's leaps and take on the two-phase Starfish King with his spikes, baby starfish and weak points."
   },
   {
    "icon": "waves",
@@ -895,9 +931,9 @@ window.AF_DATA = {
    "name": "The Shallows",
    "status": "live",
    "map": "map-ch1",
-   "text": "Warm, sunlit water above the reef. Coral, sand and small fish make it the perfect place to start growing. 31 levels, two bosses and a cave maze finale.",
+   "text": "Warm, sunlit water above the reef. Coral, sand and small fish make it the perfect place to start growing. 35 levels, two bosses and a cave maze finale.",
    "badges": [
-    "31 levels",
+    "35 levels",
     "2 boss fights",
     "Playable now (in testing)"
    ]
