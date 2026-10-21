@@ -496,7 +496,7 @@ window.AF_DATA = {
    "new": [
     "Pufferfish enemy"
    ],
-   "tip": "Keep your distance from puffed-up pufferfish."
+   "tip": "Puffed-up pufferfish bounce everything away and can't be eaten - wait for it to deflate, then bite!"
   },
   {
    "n": 3,
@@ -508,7 +508,7 @@ window.AF_DATA = {
     "Powerup bubbles",
     "The Poison Bubble"
    ],
-   "tip": "Save Slow World for a crowded screen."
+   "tip": "Swim into floating bubbles to grab powerups - but steer around the poison bubble!"
   },
   {
    "n": 4,
@@ -552,7 +552,7 @@ window.AF_DATA = {
     "Hermit Crab",
     "Starfish"
    ],
-   "tip": ""
+   "tip": "Hermit crabs and starfish are free snacks - eat them for bonus shells!"
   },
   {
    "n": 8,
@@ -572,7 +572,7 @@ window.AF_DATA = {
    "new": [
     "Sea Anemone"
    ],
-   "tip": "Only clownfish are safe inside an anemone."
+   "tip": "Only clownfish are safe inside an anemone - everyone else gets stung and slowed."
   },
   {
    "n": 10,
@@ -641,7 +641,7 @@ window.AF_DATA = {
    "new": [
     "Sea Urchin"
    ],
-   "tip": "Touching its spikes hurts. Grow big enough and you can smash it!"
+   "tip": "Sea urchins are covered in spikes - touching them hurts. Grow big enough and you can smash them!"
   },
   {
    "n": 17,
@@ -679,7 +679,7 @@ window.AF_DATA = {
    "new": [
     "Giant Clam"
    ],
-   "tip": ""
+   "tip": "A giant clam opens to show a reward, but if it snaps shut while you are inside it's over - watch for the shake!"
   },
   {
    "n": 21,
@@ -690,7 +690,7 @@ window.AF_DATA = {
    "new": [
     "Poison Fish"
    ],
-   "tip": ""
+   "tip": "Poison fish are slow and green-tinted - eating one flips your controls for a few seconds!"
   },
   {
    "n": 22,
@@ -768,7 +768,7 @@ window.AF_DATA = {
    "new": [
     "School Rush event"
    ],
-   "tip": ""
+   "tip": "A huge school is rushing through! Stay clear of its wake, then bite the calm front for a bonus."
   },
   {
    "n": 30,

@@ -189,6 +189,19 @@ lv(34, "The Starfish King", "boss", 3, "The armored ruler of the Shallows reef. 
 lv(35, "The Maze", "maze", 10, "The last stretch of the Shallows: swim through a winding cave maze to the glowing light at the end to finish the chapter - and open the way to the Kelp Forest.",
    ["Cave maze finale", "Chapter 2 cutscene"], "Enter the cave on the left and find your way through the maze to the light.")
 
+# the in-game tips (LevelDefinition.tipText) of the levels that introduce something
+_TIPS = {2: "Puffed-up pufferfish bounce everything away and can't be eaten - wait for it to deflate, then bite!",
+         3: "Swim into floating bubbles to grab powerups - but steer around the poison bubble!",
+         7: "Hermit crabs and starfish are free snacks - eat them for bonus shells!",
+         9: "Only clownfish are safe inside an anemone - everyone else gets stung and slowed.",
+         16: "Sea urchins are covered in spikes - touching them hurts. Grow big enough and you can smash them!",
+         20: "A giant clam opens to show a reward, but if it snaps shut while you are inside it's over - watch for the shake!",
+         21: "Poison fish are slow and green-tinted - eating one flips your controls for a few seconds!",
+         29: "A huge school is rushing through! Stay clear of its wake, then bite the calm front for a bonus."}
+for _l in L:
+    if _l["n"] in _TIPS:
+        _l["tip"] = _TIPS[_l["n"]]
+
 # ------------------------------------------------------------------ the rest of the site content
 FEATURES = [
     dict(icon="fish", title="Eat. Grow. Survive.", text="Swim with one thumb, chomp fish smaller than you and grow through size stages - but anything bigger is hunting you."),
