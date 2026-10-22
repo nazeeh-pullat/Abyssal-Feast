@@ -262,8 +262,8 @@ SCENES = [
     dict(src="assets/img/scenes/s3-anemone-alley.webp", caption="Anemone Alley - only Clownfish are safe"),
     dict(src="assets/img/scenes/s4-mantis.webp", caption="Miniboss: the Peacock Mantis Shrimp"),
     dict(src="assets/img/scenes/s5-starfish-king.webp", caption="Boss: the Starfish King and his baby starfish"),
-    dict(src="assets/img/scenes/s6-predators.webp", caption="Hogfish, Lionfish and Parrotfish rule the reef"),
-    dict(src="assets/img/scenes/s7-map.webp", caption="Chapter 1 - pick your level on the map"),
+    dict(src="assets/img/scenes/s6-giant-clam.webp", caption="Giant Clam - a reward worth the risk"),
+    dict(src="assets/img/scenes/s7-map.webp", caption="The Shallows map - pick your level"),
 ]
 
 data = dict(scenes=SCENES, stats=STATS, player=PLAYER, enemies=ENEMIES, ladder=LADDER, marine=MARINE, bosses=BOSSES, events=EVENTS, powerups=POWERUPS, perks=PERKS,

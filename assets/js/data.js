@@ -22,12 +22,12 @@ window.AF_DATA = {
    "caption": "Boss: the Starfish King and his baby starfish"
   },
   {
-   "src": "assets/img/scenes/s6-predators.webp",
-   "caption": "Hogfish, Lionfish and Parrotfish rule the reef"
+   "src": "assets/img/scenes/s6-giant-clam.webp",
+   "caption": "Giant Clam - a reward worth the risk"
   },
   {
    "src": "assets/img/scenes/s7-map.webp",
-   "caption": "Chapter 1 - pick your level on the map"
+   "caption": "The Shallows map - pick your level"
   }
  ],
  "stats": {
