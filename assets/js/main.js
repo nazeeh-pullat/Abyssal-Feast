@@ -372,7 +372,7 @@
     }
     // the gauge is a scrollbar too: click or drag it (or use the arrow / Home / End / Page keys when focused) to move through the page
     const track = $("#depthtrack");
-    const scrollToP = (p, smooth) => { const m = document.documentElement.scrollHeight - innerHeight; scrollTo({ top: clamp(p, 0, 1) * m, behavior: smooth && !reduce ? "smooth" : "auto" }); };
+    const scrollToP = (p, smooth) => { const m = document.documentElement.scrollHeight - innerHeight; scrollTo({ top: clamp(p, 0, 1) * m, behavior: smooth && !reduce ? "smooth" : "instant" }); if (!smooth || reduce) update(); };
     const pFromEvent = (e) => { const r = track.getBoundingClientRect(); return clamp((e.clientY - r.top) / r.height, 0, 1); };
     let dragging = false;
     track.addEventListener("pointerdown", (e) => { dragging = true; track.classList.add("dragging"); try { track.setPointerCapture(e.pointerId); } catch (_) {} scrollToP(pFromEvent(e), !e.target.closest(".dot")); e.preventDefault(); });
