@@ -363,13 +363,28 @@
       ticking = false;
       const max = document.documentElement.scrollHeight - innerHeight, p = max > 0 ? clamp(scrollY / max, 0, 1) : 0, f = p * (stops.length - 1), i = Math.min(stops.length - 2, Math.floor(f)), t = f - i;
       root.setProperty("--bg1", mix(stops[i][0], stops[i + 1][0], t)); root.setProperty("--bg2", mix(stops[i][1], stops[i + 1][1], t)); root.setProperty("--ray", String(1 - p * 0.9));
-      fill.style.height = p * 100 + "%"; dot.style.top = p * 100 + "%"; num.textContent = Math.round(p * 220) + " m"; zone.textContent = zones[Math.min(zones.length - 1, Math.round(f))];
+      fill.style.height = p * 100 + "%"; dot.style.top = p * 100 + "%"; track.setAttribute("aria-valuenow", Math.round(p * 100)); track.setAttribute("aria-valuetext", Math.round(p * 220) + " metres deep"); num.textContent = Math.round(p * 220) + " m"; zone.textContent = zones[Math.min(zones.length - 1, Math.round(f))];
       nav.classList.toggle("scrolled", scrollY > 30);
       if (!reduce && scrollY < innerHeight * 1.2) bg.style.transform = `translateY(${scrollY * 0.28}px) scale(${1 + scrollY * 0.00018})`;
       let cur = "";
       for (const s of secs) { const r = s.getBoundingClientRect(); if (r.top < innerHeight * 0.4 && r.bottom > innerHeight * 0.4) cur = s.id; }
       links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
     }
+    // the gauge is a scrollbar too: click or drag it (or use the arrow / Home / End / Page keys when focused) to move through the page
+    const track = $("#depthtrack");
+    const scrollToP = (p, smooth) => { const m = document.documentElement.scrollHeight - innerHeight; scrollTo({ top: clamp(p, 0, 1) * m, behavior: smooth && !reduce ? "smooth" : "auto" }); };
+    const pFromEvent = (e) => { const r = track.getBoundingClientRect(); return clamp((e.clientY - r.top) / r.height, 0, 1); };
+    let dragging = false;
+    track.addEventListener("pointerdown", (e) => { dragging = true; track.classList.add("dragging"); try { track.setPointerCapture(e.pointerId); } catch (_) {} scrollToP(pFromEvent(e), !e.target.closest(".dot")); e.preventDefault(); });
+    track.addEventListener("pointermove", (e) => { if (dragging) scrollToP(pFromEvent(e), false); });
+    const stopDrag = () => { dragging = false; track.classList.remove("dragging"); };
+    track.addEventListener("pointerup", stopDrag); track.addEventListener("pointercancel", stopDrag);
+    track.addEventListener("keydown", (e) => {
+      const m = document.documentElement.scrollHeight - innerHeight, cur = m > 0 ? scrollY / m : 0, step = { ArrowDown: 0.04, ArrowUp: -0.04, PageDown: 0.15, PageUp: -0.15 }[e.key];
+      if (step !== undefined) { scrollToP(cur + step, false); e.preventDefault(); }
+      else if (e.key === "Home") { scrollToP(0, true); e.preventDefault(); }
+      else if (e.key === "End") { scrollToP(1, true); e.preventDefault(); }
+    });
     addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true }); addEventListener("resize", update); update();
     if (matchMedia("(hover: hover) and (pointer: fine)").matches && !reduce) {
       const g = $("#glow"); document.body.classList.add("has-pointer");

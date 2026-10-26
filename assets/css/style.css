@@ -115,7 +115,11 @@ h2.title { font-size: clamp(2.1rem, 5vw, 3.7rem); background: linear-gradient(18
 
 /* ---------- depth gauge ---------- */
 .depth { position: fixed; right: 18px; top: 50%; transform: translateY(-50%); z-index: 40; height: 52vh; width: 46px; display: flex; flex-direction: column; align-items: center; pointer-events: none; }
-.depth .track { position: relative; flex: 1; width: 4px; border-radius: 4px; background: rgba(255,255,255,.18); }
+.depth .track { position: relative; flex: 1; width: 4px; border-radius: 4px; background: rgba(255,255,255,.18); pointer-events: auto; cursor: pointer; touch-action: none; outline-offset: 6px; }
+.depth .track::before { content: ""; position: absolute; inset: -6px -16px; } /* wider invisible hit area so the thin line is easy to grab */
+.depth .track:focus-visible { outline: 2px solid var(--aqua); }
+.depth .dot { cursor: grab; }
+.depth .track.dragging, .depth .track.dragging .dot { cursor: grabbing; }
 .depth .fill { position: absolute; left: 0; top: 0; width: 100%; height: 0%; border-radius: 4px; background: linear-gradient(180deg, var(--aqua), var(--sun)); box-shadow: 0 0 14px rgba(94, 234, 212, .7); }
 .depth .dot { position: absolute; left: 50%; top: 0; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, var(--aqua) 55%, #0a6); box-shadow: 0 0 18px var(--aqua); }
 .depth .num { font: 400 1.05rem var(--display); margin-top: 10px; color: #fff; text-shadow: 0 2px 8px #000; }
