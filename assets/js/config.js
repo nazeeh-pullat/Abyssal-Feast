@@ -1,6 +1,7 @@
 /* Site settings - edit this file to add links and your own screenshots / trailer. Leave a value empty to hide it. */
 window.AF_CONFIG = {
   links: {
+    windows: "https://n-p-games.itch.io/abyssal-feast",   // Windows download on itch.io
     googlePlay: "",        // e.g. "https://play.google.com/store/apps/details?id=com.NPGames.AbyssalFeast"
     discord: "https://discord.gg/xsfxD953wG",   // Abyssal Feast Discord invite
     donate: "https://paypal.me/nazeehpullat",   // PayPal.me donation page
