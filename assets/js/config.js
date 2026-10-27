@@ -2,7 +2,7 @@
 window.AF_CONFIG = {
   links: {
     windows: "https://n-p-games.itch.io/abyssal-feast",   // Windows download on itch.io
-    googlePlay: "",        // e.g. "https://play.google.com/store/apps/details?id=com.NPGames.AbyssalFeast"
+    googlePlay: "https://play.google.com/store/apps/details?id=com.nazeehpullat.abyssalfeast",   // Google Play listing
     discord: "https://discord.gg/xsfxD953wG",   // Abyssal Feast Discord invite
     donate: "https://paypal.me/nazeehpullat",   // PayPal.me donation page
     youtube: "",           // your channel or trailer page
