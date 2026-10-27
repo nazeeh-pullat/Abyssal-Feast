@@ -126,7 +126,7 @@
   function renderCTA() {
     const L = C.links || {}, out = [];
     out.push(L.googlePlay ? `<a class="btn" href="${esc(L.googlePlay)}" target="_blank" rel="noopener">${ic("play")} Get it on Google Play</a>` : `<span class="btn" aria-disabled="true" style="--c1:#b8cfd8;--c2:#7fa0ae;box-shadow:0 8px 0 rgba(20,60,80,.5)">${ic("play")} Google Play - coming soon</span>`);
-    if (L.windows) out.push(`<a class="btn ghost" href="${esc(L.windows)}" target="_blank" rel="noopener">${ic("gamepad")} Download for Windows</a>`);
+    if (L.windows) out.push(`<a class="btn" href="${esc(L.windows)}" target="_blank" rel="noopener">${ic("gamepad")} Download for Windows</a>`);
     if (L.discord) out.push(`<a class="btn ghost" href="${esc(L.discord)}" target="_blank" rel="noopener">${ic("chat")} Join the Discord</a>`);
     if (L.youtube) out.push(`<a class="btn ghost" href="${esc(L.youtube)}" target="_blank" rel="noopener">${ic("play")} YouTube</a>`);
     out.push(`<a class="btn ghost" href="mailto:nazeehfazal12@gmail.com">${ic("mail")} Say hello</a>`);
