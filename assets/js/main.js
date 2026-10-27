@@ -125,16 +125,16 @@
 
   function renderCTA() {
     const L = C.links || {}, out = [];
-    if (L.windows) out.push(`<a class="btn" href="${esc(L.windows)}" target="_blank" rel="noopener">${ic("gamepad")} Download for Windows</a>`);
     out.push(L.googlePlay ? `<a class="btn" href="${esc(L.googlePlay)}" target="_blank" rel="noopener">${ic("play")} Get it on Google Play</a>` : `<span class="btn" aria-disabled="true" style="--c1:#b8cfd8;--c2:#7fa0ae;box-shadow:0 8px 0 rgba(20,60,80,.5)">${ic("play")} Google Play - coming soon</span>`);
+    if (L.windows) out.push(`<a class="btn ghost" href="${esc(L.windows)}" target="_blank" rel="noopener">${ic("gamepad")} Download for Windows</a>`);
     if (L.discord) out.push(`<a class="btn ghost" href="${esc(L.discord)}" target="_blank" rel="noopener">${ic("chat")} Join the Discord</a>`);
     if (L.youtube) out.push(`<a class="btn ghost" href="${esc(L.youtube)}" target="_blank" rel="noopener">${ic("play")} YouTube</a>`);
     out.push(`<a class="btn ghost" href="mailto:nazeehfazal12@gmail.com">${ic("mail")} Say hello</a>`);
     $("#cta-links").innerHTML = out.join("");
     // the hero's main button goes straight to the store page once there is one, otherwise down to the download section
-    const dl = $("#hero-dl");
-    const heroLink = L.windows || L.googlePlay;
-    if (dl && heroLink) { dl.href = heroLink; dl.target = "_blank"; dl.rel = "noopener"; if (L.windows) dl.textContent = "Download for Windows"; }
+    const dlA = $("#hero-android"), dlW = $("#hero-dl");
+    if (dlA && L.googlePlay) { dlA.href = L.googlePlay; dlA.target = "_blank"; dlA.rel = "noopener"; }
+    if (dlW && L.windows) { dlW.href = L.windows; dlW.target = "_blank"; dlW.rel = "noopener"; }
     const f = [L.discord && ["Discord", L.discord], L.youtube && ["YouTube", L.youtube], L.tiktok && ["TikTok", L.tiktok], L.instagram && ["Instagram", L.instagram]].filter(Boolean);
     $("#f-links").innerHTML = f.map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${n}</a>`).join(" · ");
   }
